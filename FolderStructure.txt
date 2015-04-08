@@ -1,0 +1,71 @@
+=====================
+ScheduleGuru-Scalatra
+=====================
+	FolderStructure.txt (gives a description of the folders)
+	README.md (github generated readme file)
+	======
+	luHTML
+	======
+		Lu's temporary folder for HTML before she moves it to scalatra
+		Has a ton of stuff in it
+	============
+	scheduleguru
+	============
+		sbt (executable to run our webapp)
+		README.md (gliter8 generated readme file)
+		=======
+		project
+		=======
+			build.properties (just has a version number in it)
+			build.scala (has library dependencies and other stuff)
+			plugins.sbt (plugins I guess, not sure if we modify this)
+			======
+			target
+			======
+				(other folders like resolution-cache and scala-2.10 and streams. I don't think we need to change these)			
+			=======
+			project
+			=======
+				======
+				target
+				======
+					==============
+					config-classes
+					==============
+						a whole bunch of .class and .cache files (won't modify I guess)
+		======
+		target
+		======
+			(not sure whats going on here and why every folder has the same name!!!!!!!!)
+		===
+		src
+		===
+			====
+			main (where the actual code is)
+			====
+				=========
+				resources
+				=========
+					logback.xml (doesn't seem important)
+				=====
+				scala
+				=====
+					ScalaBootstrap.scala (don't know what this does, probably not important)
+					===
+					com
+					===
+						============
+						scheduleGuru
+						============
+							===
+							app
+							===
+								MyScalatraServlet.scala (all the html goes here)
+								ScheduleguruStack.scala (not sure what this does or if we need it)
+				======
+				webapp
+				======
+					We can put javascript and php and data here!!!!!
+			====
+			test (folder for our test code which we won't write)
+			====
