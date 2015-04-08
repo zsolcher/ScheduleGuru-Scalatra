@@ -1,3 +1,23 @@
+%%%%%%%%%%%%%%%%%%%
+Important locations
+%%%%%%%%%%%%%%%%%%%
+HTML goes in "MyScalatraServlet.scala" which is located in:
+scheduleguru/src/main/scala/com/ScheduleGuru/app/
+
+Javascript, php, and imgs go in their respective folders which are all in
+scheduleguru/src/main/webapp/js
+scheduleguru/src/main/webapp/imgs
+scheduleguru/src/main/webapp/php
+
+Javascript that you put in the js folder can be imported into "MyScalatraServlet.Scala" by:
+<script src="./js/test.js"></script>
+
+So similar imports with php and imgs
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Full Directory Tree (mostly)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 =====================
 ScheduleGuru-Scalatra
 =====================
