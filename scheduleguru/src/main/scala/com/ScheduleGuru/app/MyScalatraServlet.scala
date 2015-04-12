@@ -169,8 +169,8 @@ class MyScalatraServlet extends ScheduleguruStack {
         </div>
     </section>	
 <br></br>
-<a href="build2.html">NEXT</a> 
-       
+<a href="build1.html">BACK</a> 
+<a href="build3.html">NEXT</a>        
 </body>
  </html>
   }
