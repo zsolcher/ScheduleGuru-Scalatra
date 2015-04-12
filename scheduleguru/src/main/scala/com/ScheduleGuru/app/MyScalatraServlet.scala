@@ -242,13 +242,13 @@ class MyScalatraServlet extends ScheduleguruStack {
 		</center>
 
 		<!--menu bar-->
-		<nav>
+		<!--nav>
 			<ul>
 				<li><a href="welcome.html">Home</a></li>
 				<li><a href="aboutus.html">Our Story</a></li>
 				<li><a href="contact.html">Contact us</a></li>
 			</ul>
-		</nav>
+		</nav-->
 
 		<!--icons-->
 		<section id = "loginBox" class="loginForm cf">
