@@ -52,7 +52,7 @@ class MyScalatraServlet extends ScheduleguruStack {
     </html>
   }
 
-    get("/build2.html") {
+  get("/build2.html") {
     <html>
         <head>
             <title>MasterPage</title>
