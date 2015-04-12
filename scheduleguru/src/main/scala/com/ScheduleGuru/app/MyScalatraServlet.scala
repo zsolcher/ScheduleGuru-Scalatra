@@ -244,7 +244,7 @@ class MyScalatraServlet extends ScheduleguruStack {
 				<br>
 				</br>
 				P.S. Please 
-				<a href="email.html">email</a> 
+				<a href="contact.html">email</a> 
 				us with any feedback :)
 				<br>
 				</br>
