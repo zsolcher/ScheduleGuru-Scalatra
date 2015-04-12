@@ -240,10 +240,10 @@ class MyScalatraServlet extends ScheduleguruStack {
 				Best,
 				
 				<br>
-				<br>
+				</br>
 				ScheduleGuru Team
 				<br>
-				<br>
+				</br>
 				P.S. Please 
 				<a href="email.html">email</a> 
 				us with any feedback :)
