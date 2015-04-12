@@ -176,10 +176,10 @@ class MyScalatraServlet extends ScheduleguruStack {
   }
 
 
-    get("/build3.html") {
+ 	get("/build3.html") {
     <html>
         <head>
-            <title>MasterPage</title>
+            <title>build3</title>
             <meta charset="UTF-8"></meta>
             <meta name="description" content=""></meta>
             <meta name="keywords" content=""></meta>
@@ -187,27 +187,32 @@ class MyScalatraServlet extends ScheduleguruStack {
         </head>
         <body>
         	<center>
-            	<h1> ScheduleGuru </h1>
+            	<h1> Build Schedule 3 (Classes in the Major)</h1>
         	</center>
 	
     	    <!--menu bar-->
     	    <nav>
                 <ul>
                     <li><a href ="welcome.html">Home</a></li>
-				    <li><a href="aboutus.html">Our Story</a></li>
-                    <li><a href=".html"></a></li>
+					<li><a href ="build1.html">Build Schedule</a></li>
+				    <li><a href="aboutus.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
                 </ul>
             </nav>
-	
-        	<!--icons-->
-        	<form>
-              <input type="submit" value="settings"></input>
-              <input type="submit" value="profile"></input>
-              <input type="submit" value="contact us"></input>
-              <input type="submit" value="start"></input>
-    	    </form>
-        </body>
-    </html>
+ <section>
+        <div  id="majorClassOptions">
+			JavaScript for loading classes in major goes here: 
+			<br></br>
+	 Calendar also goes here
+        </div>
+    </section>
+    
+
+<br></br>
+<a href="build2.html">BACK</a> 
+<a href="build4.html">NEXT</a>        
+</body>
+ </html>
   }
 	
 
