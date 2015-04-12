@@ -18,7 +18,7 @@ class MyScalatraServlet extends ScheduleguruStack {
         </html>
     }
 
-  	get("/build1.html") {
+  get("/build1.html") {
     <html>
         <head>
             <title>MasterPage</title>
@@ -37,7 +37,7 @@ class MyScalatraServlet extends ScheduleguruStack {
                 <ul>
                     <li><a href ="welcome.html">Home</a></li>
 				    <li><a href="aboutus.html">Our Story</a></li>
-                    <li><a href="contact.html"></a></li>
+                    <li><a href=".html"></a></li>
                 </ul>
             </nav-->
 	
@@ -52,11 +52,10 @@ class MyScalatraServlet extends ScheduleguruStack {
     </html>
   }
 
-  	get("/welcome.html") {
-
-<html>
+    get("/build2.html") {
+    <html>
         <head>
-            <title>Home</title>
+            <title>MasterPage</title>
             <meta charset="UTF-8"></meta>
             <meta name="description" content=""></meta>
             <meta name="keywords" content=""></meta>
@@ -71,54 +70,130 @@ class MyScalatraServlet extends ScheduleguruStack {
     	    <nav>
                 <ul>
                     <li><a href ="welcome.html">Home</a></li>
-					<li><a href ="build1.html">Build Schedule</a></li>
-				    <li><a href="aboutus.html">About Us</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+				    <li><a href="aboutus.html">Our Story</a></li>
+                    <li><a href=".html"></a></li>
                 </ul>
             </nav>
-			
-<div id="letterArea">
-        <center>
-			<h2>A Letter to the User</h2>
-        </center>
-        <hr></hr>
-        <p>
-            <h3>
-				Dear User,
-				<br>
-				</br>
-				Here's a brief overview on how to use the ScheduleGuru App.
-            If you have not already signed up for an account, please do so now.
-            If you are already a registered user, please proceed to login.
-            Once you have logged in, you will be greeted by a homepage, in which
-            you can change your account settings and view your progress.
-            Click on "start" in order to begin the process of preparing your schedule.
-            Use the left and right buttons to navigate through the different stages.
-            You may also click on any point of the progress bar to go back to a previous section.
-            Have fun scheduling!
-				<br>
-				</br>
-				Best,
-				
-				<br>
-				</br>
-				ScheduleGuru Team
-				<br>
-				</br>
-				P.S. Please 
-				<a href="email.html">email</a> 
-				us with any feedback :)
-				<br>
-				</br>
-				
-				
-			</h3>
-        </p>
-</div>
-       
+	
+        	<!--icons-->
+        	<form>
+              <input type="submit" value="settings"></input>
+              <input type="submit" value="profile"></input>
+              <input type="submit" value="contact us"></input>
+              <input type="submit" value="start"></input>
+    	    </form>
         </body>
- </html>
-}
+    </html>
+  }
+
+
+    get("/build3.html") {
+    <html>
+        <head>
+            <title>MasterPage</title>
+            <meta charset="UTF-8"></meta>
+            <meta name="description" content=""></meta>
+            <meta name="keywords" content=""></meta>
+            <link rel="stylesheet" type="text/css" href="./css/master.css"></link>
+        </head>
+        <body>
+        	<center>
+            	<h1> ScheduleGuru </h1>
+        	</center>
+	
+    	    <!--menu bar-->
+    	    <nav>
+                <ul>
+                    <li><a href ="welcome.html">Home</a></li>
+				    <li><a href="aboutus.html">Our Story</a></li>
+                    <li><a href=".html"></a></li>
+                </ul>
+            </nav>
+	
+        	<!--icons-->
+        	<form>
+              <input type="submit" value="settings"></input>
+              <input type="submit" value="profile"></input>
+              <input type="submit" value="contact us"></input>
+              <input type="submit" value="start"></input>
+    	    </form>
+        </body>
+    </html>
+  }
+	
+
+    get("/build4.html") {
+    <html>
+        <head>
+            <title>MasterPage</title>
+            <meta charset="UTF-8"></meta>
+            <meta name="description" content=""></meta>
+            <meta name="keywords" content=""></meta>
+            <link rel="stylesheet" type="text/css" href="./css/master.css"></link>
+        </head>
+        <body>
+        	<center>
+            	<h1> ScheduleGuru </h1>
+        	</center>
+	
+    	    <!--menu bar-->
+    	    <nav>
+                <ul>
+                    <li><a href ="welcome.html">Home</a></li>
+				    <li><a href="aboutus.html">Our Story</a></li>
+                    <li><a href=".html"></a></li>
+                </ul>
+            </nav>
+	
+        	<!--icons-->
+        	<form>
+              <input type="submit" value="settings"></input>
+              <input type="submit" value="profile"></input>
+              <input type="submit" value="contact us"></input>
+              <input type="submit" value="start"></input>
+    	    </form>
+        </body>
+    </html>
+  }
+	
+
+    get("/build5.html") {
+    <html>
+        <head>
+            <title>MasterPage</title>
+            <meta charset="UTF-8"></meta>
+            <meta name="description" content=""></meta>
+            <meta name="keywords" content=""></meta>
+            <link rel="stylesheet" type="text/css" href="./css/master.css"></link>
+        </head>
+        <body>
+        	<center>
+            	<h1> ScheduleGuru </h1>
+        	</center>
+	
+    	    <!--menu bar-->
+    	    <nav>
+                <ul>
+                    <li><a href ="welcome.html">Home</a></li>
+				    <li><a href="aboutus.html">Our Story</a></li>
+                    <li><a href=".html"></a></li>
+                </ul>
+            </nav>
+	
+        	<!--icons-->
+        	<form>
+              <input type="submit" value="settings"></input>
+              <input type="submit" value="profile"></input>
+              <input type="submit" value="contact us"></input>
+              <input type="submit" value="start"></input>
+    	    </form>
+        </body>
+    </html>
+  }
+	
+  get("/welcome.html") {
+    
+  }
 
   get("/login.html"){
     <html>
@@ -202,7 +277,7 @@ class MyScalatraServlet extends ScheduleguruStack {
 </html>
   }
 
- get("/aboutus.html"){
+  get("/aboutus.html"){
 <html>
 
 <head>
@@ -315,158 +390,37 @@ class MyScalatraServlet extends ScheduleguruStack {
 </html>
   }
 
-	get("/contact.html"){
+  get("/contact.html"){
 <html>
 
 <head>
-	<title>Contact</title>
-	<meta charset="UTF-8"></meta>
-	<meta name="description" content=""></meta>
-	<meta name="keywords" content=""></meta>
-	 <link rel="stylesheet" type="text/css" href="./css/master.css"></link>
+	<title>Welcome</title>
+	<meta charset="UTF-8"/>
+	<meta name="description" content=""/>
+	<meta name="keywords" content=""/>
+	<link rel="stylesheet" type="text/css" href="./css/master.css"/>
 </head>
 
 <body>
 	<center>
-		<h1> Contact Us</h1>
+		<h1> Welcome to ScheduleGuru</h1>
 	</center>
 
-				    <!--menu bar-->
-    	    <nav>
-                <ul>
-                    <li><a href ="welcome.html">Home</a></li>
-					<li><a href ="build1.html">Build Schedule</a></li>
-				    <li><a href="aboutus.html">About Us</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
+	<!--menu bar-->
+	<nav>
+		<ul>
+			<li><a href="welcome.html">Home</a></li>
+			<li><a href="aboutus.html">Our Story</a></li>
+			<li><a href="contact.html">Contact us</a></li>
+		</ul>
+	</nav>
 
-<form name="feedbackForm">
-	We welcome your feedback: <br></br>
-	<textarea id="feedbackArea" rows = "20" cols="80">
-		
-	</textarea>
-	<br></br>
-	<input type="submit" value="Send"></input>
-</form>
-	
+    <p>
+        This is the contact us page
+    </p>
 
 </body>
 
 </html>
-}
-	
-	get("/aboutus.html"){
-<html>
-
-<head>
-	<title>Contact</title>
-	<meta charset="UTF-8"></meta>
-	<meta name="description" content=""></meta>
-	<meta name="keywords" content=""></meta>
-	 <link rel="stylesheet" type="text/css" href="./css/master.css"></link>
-</head>
-
-<body>
-	<center>
-		<h1> Contact Us</h1>
-	</center>
-
-				    <!--menu bar-->
-    	    <nav>
-                <ul>
-                    <li><a href ="welcome.html">Home</a></li>
-					<li><a href ="build1.html">Build Schedule</a></li>
-				    <li><a href="aboutus.html">About Us</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
-
-	<section id="aboutus">
-		
-			<center>
-				Our story begin many many days ago, when we were first assigned to this project. We took this journey in an attempt to improve our current model of TigerPaws -- which is a terrible, archiac way of scheduling classes.
-
-				<br></br>
-			<br> Meet the Team:</br>
-	<br></br>
-
-
-				<table width="500px" height="100%" border="2" color=white>
-
-					<tr>
-						<td>
-							<img src="imgs/rb.jpeg" alt="Rob Bierman" ></img>
-						</td>
-
-						<td>
-							Rob Bierman
-							<br></br>
-							<br></br>
-							Our fearless hobbit
-						</td>
-					</tr>
-
-
-					<tr>
-						<td>
-							<img src="imgs/kj.jpeg" alt="Kendrick James"></img>
-						</td>
-
-						<td>
-							Kendrick James
-							<br></br>
-							<br></br>
-							No description needed.
-						</td>
-					</tr>
-					
-					
-					<tr>
-						<td>
-							<img src="imgs/ll.jpeg" alt="Lu Liu"></img>
-						</td>
-
-						<td>
-							Lu Liu
-							<br></br>
-							<br></br>
-							Need to figure out how to crop pics
-						</td>
-					</tr>
-					
-					<tr>
-						<td>
-							<img src="imgs/co.jpeg" alt="Caleb Olson"></img>
-						</td>
-
-						<td>
-							Caleb Olson
-							<br></br>
-							<br></br>
-							Where's the Algorithm?!
-						</td>
-					</tr>
-					
-					<tr>
-						<td>
-							<img src="imgs/zs.jpeg" alt="Zach Solcher"></img>
-						</td>
-
-						<td>
-							Zach Solcher
-							<br></br>
-							<br></br>
-							Face of Polymer
-						</td>
-					</tr>
-				</table>
-			</center>
-		</p>
-	</section>
-
-</body>
-
-</html>
-	}
+  }
 }
