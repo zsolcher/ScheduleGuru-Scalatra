@@ -192,9 +192,10 @@ class MyScalatraServlet extends ScheduleguruStack {
   }
 	
   get("/welcome.html") {
-    <html>
+
+<html>
         <head>
-            <title>MasterPage</title>
+            <title>Home</title>
             <meta charset="UTF-8"></meta>
             <meta name="description" content=""></meta>
             <meta name="keywords" content=""></meta>
@@ -209,21 +210,60 @@ class MyScalatraServlet extends ScheduleguruStack {
     	    <nav>
                 <ul>
                     <li><a href ="welcome.html">Home</a></li>
-				    <li><a href="aboutus.html">Our Story</a></li>
-                    <li><a href=".html"></a></li>
+					<li><a href ="build1.html">Build Schedule</a></li>
+				    <li><a href="aboutus.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
                 </ul>
             </nav>
-	
-        	<!--icons-->
-        	<form>
-              <input type="submit" value="settings"></input>
-              <input type="submit" value="profile"></input>
-              <input type="submit" value="contact us"></input>
-              <input type="submit" value="start"></input>
-    	    </form>
+<style>
+
+h2,h3 {
+	font-family:cursive, verdana;
+} 
+</style>
+			
+<div id="letterArea">
+        <center>
+			<h2>A Letter to the User</h2>
+        </center>
+        <hr>
+        <p>
+            <h3>
+				Dear User,
+				<br>
+				<br>
+				Here's a brief overview on how to use the ScheduleGuru App.
+            If you have not already signed up for an account, please do so now.
+            If you are already a registered user, please proceed to login.
+            Once you have logged in, you will be greeted by a homepage, in which
+            you can change your account settings and view your progress.
+            Click on "start" in order to begin the process of preparing your schedule.
+            Use the left "<" and right ">" buttons to navigate through the different stages.
+            You may also click on any point of the progress bar to go back to a previous section.
+            Have fun scheduling!
+				<br>
+				<br>
+				Best,
+				
+				<br>
+				<br>
+				ScheduleGuru Team
+				<br>
+				<br>
+				P.S. Please 
+				<a href="email.html">email</a> 
+				us with any feedback :)
+				<br>
+				<br>
+				
+				
+			</h3>
+        </p>
+</div>
+       
         </body>
-    </html>
-  }
+ </html>
+}
 
   get("/login.html"){
     <html>
