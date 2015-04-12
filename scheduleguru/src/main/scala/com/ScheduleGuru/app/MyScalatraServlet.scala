@@ -225,7 +225,7 @@ class MyScalatraServlet extends ScheduleguruStack {
             <h3>
 				Dear User,
 				<br>
-				<br>
+				</br>
 				Here's a brief overview on how to use the ScheduleGuru App.
             If you have not already signed up for an account, please do so now.
             If you are already a registered user, please proceed to login.
@@ -236,7 +236,7 @@ class MyScalatraServlet extends ScheduleguruStack {
             You may also click on any point of the progress bar to go back to a previous section.
             Have fun scheduling!
 				<br>
-				<br>
+				</br>
 				Best,
 				
 				<br>
@@ -248,7 +248,7 @@ class MyScalatraServlet extends ScheduleguruStack {
 				<a href="email.html">email</a> 
 				us with any feedback :)
 				<br>
-				<br>
+				</br>
 				
 				
 			</h3>
