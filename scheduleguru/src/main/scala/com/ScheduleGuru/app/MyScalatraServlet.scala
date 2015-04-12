@@ -18,7 +18,7 @@ class MyScalatraServlet extends ScheduleguruStack {
         </html>
     }
 
-  get("/build1.html") {
+  	get("/build1.html") {
     <html>
         <head>
             <title>MasterPage</title>
@@ -191,12 +191,75 @@ class MyScalatraServlet extends ScheduleguruStack {
     </html>
   }
 	
-  get("/welcome.html") {
-    
+  	get("/welcome.html") {
+    	<html>
+        <head>
+            <title>Home</title>
+            <meta charset="UTF-8"></meta>
+            <meta name="description" content=""></meta>
+            <meta name="keywords" content=""></meta>
+            <link rel="stylesheet" type="text/css" href="./css/master.css"></link>
+        </head>
+        <body>
+        	<center>
+            	<h1> ScheduleGuru </h1>
+        	</center>
+	
+    	    <!--menu bar-->
+    	    <nav>
+                <ul>
+                    <li><a href ="welcome.html">Home</a></li>
+					<li><a href ="build1.html">Build Schedule</a></li>
+				    <li><a href="aboutus.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+			
+<div id="letterArea">
+        <center>
+			<h2>A Letter to the User</h2>
+        </center>
+        <hr></hr>
+        <p>
+            <h3>
+				Dear User,
+				<br>
+				</br>
+				Here's a brief overview on how to use the ScheduleGuru App.
+            If you have not already signed up for an account, please do so now.
+            If you are already a registered user, please proceed to login.
+            Once you have logged in, you will be greeted by a homepage, in which
+            you can change your account settings and view your progress.
+            Click on "start" in order to begin the process of preparing your schedule.
+            Use the left and right buttons to navigate through the different stages.
+            You may also click on any point of the progress bar to go back to a previous section.
+            Have fun scheduling!
+				<br>
+				</br>
+				Best,
+				
+				<br>
+				</br>
+				ScheduleGuru Team
+				<br>
+				</br>
+				P.S. Please 
+				<a href="email.html">email</a> 
+				us with any feedback :)
+				<br>
+				</br>
+				
+				
+			</h3>
+        </p>
+</div>
+       
+        </body>
+ </html>
   }
 
-  get("/login.html"){
-    <html>
+  	get("/login.html"){
+   	<html>
 
 	<head>
 		<title>Welcome</title>
@@ -277,10 +340,10 @@ class MyScalatraServlet extends ScheduleguruStack {
 </html>
   }
 
-  get("/aboutus.html"){
-<html>
+	get("/aboutus.html"){
+		<html>
 
-<head>
+		<head>
 	<title>Welcome</title>
 	<meta charset="UTF-8"></meta>
 	<meta name="description" content=""></meta>
@@ -390,34 +453,41 @@ class MyScalatraServlet extends ScheduleguruStack {
 </html>
   }
 
-  get("/contact.html"){
+get("/contact.html"){
 <html>
 
 <head>
-	<title>Welcome</title>
-	<meta charset="UTF-8"/>
-	<meta name="description" content=""/>
-	<meta name="keywords" content=""/>
-	<link rel="stylesheet" type="text/css" href="./css/master.css"/>
+	<title>Contact</title>
+	<meta charset="UTF-8"></meta>
+	<meta name="description" content=""></meta>
+	<meta name="keywords" content=""></meta>
+	 <link rel="stylesheet" type="text/css" href="./css/master.css"></link>
 </head>
 
 <body>
 	<center>
-		<h1> Welcome to ScheduleGuru</h1>
+		<h1> Contact Us</h1>
 	</center>
 
-	<!--menu bar-->
-	<nav>
-		<ul>
-			<li><a href="welcome.html">Home</a></li>
-			<li><a href="aboutus.html">Our Story</a></li>
-			<li><a href="contact.html">Contact us</a></li>
-		</ul>
-	</nav>
+				    <!--menu bar-->
+    	    <nav>
+                <ul>
+                    <li><a href ="welcome.html">Home</a></li>
+					<li><a href ="build1.html">Build Schedule</a></li>
+				    <li><a href="aboutus.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
 
-    <p>
-        This is the contact us page
-    </p>
+<form name="feedbackForm">
+	We welcome your feedback: <br></br>
+	<textarea id="feedbackArea" rows = "20" cols="80">
+		
+	</textarea>
+	<br></br>
+	<input type="submit" value="Send"></input>
+</form>
+	
 
 </body>
 
