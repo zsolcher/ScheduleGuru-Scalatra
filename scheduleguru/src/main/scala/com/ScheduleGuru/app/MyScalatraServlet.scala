@@ -89,7 +89,7 @@ class MyScalatraServlet extends ScheduleguruStack {
             <div class="preferenceArea">
                 <label for="selectMajor">Choose your major: </label>
                 <select id="selectMajor" onchange="majorOnChangeResponse();">
-                    <option selected>Undecided</option>
+                    <option>Undecided</option>
                     <option>Anthropology</option>
                     <option>Art</option>
                     <option>Art History</option>
