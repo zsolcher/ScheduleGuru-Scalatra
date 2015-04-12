@@ -320,9 +320,9 @@ class MyScalatraServlet extends ScheduleguruStack {
 
 <head>
 	<title>Contact</title>
-	<meta charset="UTF-8">
-	<meta name="description" content="">
-	<meta name="keywords" content="">
+	<meta charset="UTF-8"></meta>
+	<meta name="description" content=""></meta>
+	<meta name="keywords" content=""></meta>
 	 <link rel="stylesheet" type="text/css" href="./css/master.css"></link>
 </head>
 
