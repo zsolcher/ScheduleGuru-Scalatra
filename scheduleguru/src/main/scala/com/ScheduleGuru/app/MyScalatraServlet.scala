@@ -344,7 +344,7 @@ class MyScalatraServlet extends ScheduleguruStack {
 		<html>
 
 		<head>
-	<title>Welcome</title>
+	<title>About Us</title>
 	<meta charset="UTF-8"></meta>
 	<meta name="description" content=""></meta>
 	<meta name="keywords" content=""></meta>
@@ -353,7 +353,7 @@ class MyScalatraServlet extends ScheduleguruStack {
 
 <body>
 	<center>
-		<h1> Welcome to ScheduleGuru</h1>
+		<h1> Our Story</h1>
 	</center>
 
 	<!--menu bar-->
