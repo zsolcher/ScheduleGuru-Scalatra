@@ -264,9 +264,9 @@ class MyScalatraServlet extends ScheduleguruStack {
 	
 
     get("/build5.html") {
-    <html>
+   <html>
         <head>
-            <title>MasterPage</title>
+            <title>build5</title>
             <meta charset="UTF-8"></meta>
             <meta name="description" content=""></meta>
             <meta name="keywords" content=""></meta>
@@ -274,27 +274,39 @@ class MyScalatraServlet extends ScheduleguruStack {
         </head>
         <body>
         	<center>
-            	<h1> ScheduleGuru </h1>
+            	<h1> Build Schedule 5 (Finalize)</h1>
         	</center>
 	
     	    <!--menu bar-->
     	    <nav>
                 <ul>
                     <li><a href ="welcome.html">Home</a></li>
-				    <li><a href="aboutus.html">Our Story</a></li>
-                    <li><a href=".html"></a></li>
+					<li><a href ="build1.html">Build Schedule</a></li>
+				    <li><a href="aboutus.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
                 </ul>
             </nav>
-	
-        	<!--icons-->
-        	<form>
-              <input type="submit" value="settings"></input>
-              <input type="submit" value="profile"></input>
-              <input type="submit" value="contact us"></input>
-              <input type="submit" value="start"></input>
-    	    </form>
-        </body>
-    </html>
+
+    <section>
+
+			<b><u>Finalize Schedule</u></b>
+        	 <ul id="cc">
+   	     	 	Javascript for calendar goes here
+        	 </ul>
+			
+    </section>
+    <section>
+        <div class="page" id="finalize">
+            
+        </div>
+			<input type="submit" value="Finalize"></input>
+    </section>		
+
+<br></br>
+<a href="build4.html">BACK</a> 
+  
+</body>
+ </html>
   }
 	
   	get("/welcome.html") {
