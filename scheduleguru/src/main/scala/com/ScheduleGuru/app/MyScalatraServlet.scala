@@ -193,6 +193,7 @@ class MyScalatraServlet extends ScheduleguruStack {
 	
   get("/welcome.html") {
 
+<!DOCTYPE html>
 <html>
         <head>
             <title>Home</title>
@@ -232,7 +233,7 @@ class MyScalatraServlet extends ScheduleguruStack {
             Once you have logged in, you will be greeted by a homepage, in which
             you can change your account settings and view your progress.
             Click on "start" in order to begin the process of preparing your schedule.
-            Use the left "<" and right ">" buttons to navigate through the different stages.
+            Use the left and right buttons to navigate through the different stages.
             You may also click on any point of the progress bar to go back to a previous section.
             Have fun scheduling!
 				<br>
