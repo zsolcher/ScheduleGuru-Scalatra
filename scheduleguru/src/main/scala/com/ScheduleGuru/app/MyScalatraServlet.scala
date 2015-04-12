@@ -193,7 +193,6 @@ class MyScalatraServlet extends ScheduleguruStack {
 	
   get("/welcome.html") {
 
-<!DOCTYPE html>
 <html>
         <head>
             <title>Home</title>
