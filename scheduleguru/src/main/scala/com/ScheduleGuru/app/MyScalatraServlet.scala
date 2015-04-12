@@ -19,9 +19,9 @@ class MyScalatraServlet extends ScheduleguruStack {
     }
 
   	get("/build1.html") {
-    <html>
+<html>
         <head>
-            <title>MasterPage</title>
+            <title>build1</title>
             <meta charset="UTF-8"></meta>
             <meta name="description" content=""></meta>
             <meta name="keywords" content=""></meta>
@@ -29,61 +29,39 @@ class MyScalatraServlet extends ScheduleguruStack {
         </head>
         <body>
         	<center>
-            	<h1> ScheduleGuru </h1>
-        	</center>
-	
-    	    <!--menu bar-->
-    	    <!--nav>
-                <ul>
-                    <li><a href ="welcome.html">Home</a></li>
-				    <li><a href="aboutus.html">Our Story</a></li>
-                    <li><a href=".html"></a></li>
-                </ul>
-            </nav-->
-	
-        	<!--icons-->
-        	<form>
-              <input type="submit" value="settings"></input>
-              <input type="submit" value="profile"></input>
-              <input type="submit" value="contact us"></input>
-              <input type="submit" value="start"></input>
-    	    </form>
-        </body>
-    </html>
-  }
-
-    get("/build2.html") {
-    <html>
-        <head>
-            <title>MasterPage</title>
-            <meta charset="UTF-8"></meta>
-            <meta name="description" content=""></meta>
-            <meta name="keywords" content=""></meta>
-            <link rel="stylesheet" type="text/css" href="./css/master.css"></link>
-        </head>
-        <body>
-        	<center>
-            	<h1> ScheduleGuru </h1>
+            	<h1> Build Schedule 1</h1>
         	</center>
 	
     	    <!--menu bar-->
     	    <nav>
                 <ul>
                     <li><a href ="welcome.html">Home</a></li>
-				    <li><a href="aboutus.html">Our Story</a></li>
-                    <li><a href=".html"></a></li>
+					<li><a href ="build1.html">Build Schedule</a></li>
+				    <li><a href="aboutus.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
                 </ul>
             </nav>
-	
-        	<!--icons-->
-        	<form>
-              <input type="submit" value="settings"></input>
-              <input type="submit" value="profile"></input>
-              <input type="submit" value="contact us"></input>
-              <input type="submit" value="start"></input>
-    	    </form>
-        </body>
-    </html>
+			
+<form name="transcriptForm">
+	Paste transcript in the area below: <br></br>
+	<textarea id="transcriptArea" rows = "20" cols="80"></textarea>
+	<br></br>
+	<input type="submit" value="Submit"></input>
+	<br></br>
+	<br></br>
+	<br></br>
+	Parsed Classes: <br></br>
+	<textarea id="parsedclasses" rows = "10" cols="80"></textarea>
+</form>		
+
+<a href="build2.html">NEXT</a> 
+
+</body>
+ </html>
+  }
+
+    get("/build2.html") {
+    
   }
 
 
