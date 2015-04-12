@@ -215,12 +215,6 @@ class MyScalatraServlet extends ScheduleguruStack {
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
             </nav>
-<style>
-
-h2,h3 {
-	font-family:cursive, verdana;
-} 
-</style>
 			
 <div id="letterArea">
         <center>
