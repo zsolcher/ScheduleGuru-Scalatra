@@ -219,7 +219,7 @@ class MyScalatraServlet extends ScheduleguruStack {
     get("/build4.html") {
     <html>
         <head>
-            <title>MasterPage</title>
+            <title>build4</title>
             <meta charset="UTF-8"></meta>
             <meta name="description" content=""></meta>
             <meta name="keywords" content=""></meta>
@@ -227,27 +227,39 @@ class MyScalatraServlet extends ScheduleguruStack {
         </head>
         <body>
         	<center>
-            	<h1> ScheduleGuru </h1>
+            	<h1> Build Schedule 4 (CC classes)</h1>
         	</center>
 	
     	    <!--menu bar-->
     	    <nav>
                 <ul>
                     <li><a href ="welcome.html">Home</a></li>
-				    <li><a href="aboutus.html">Our Story</a></li>
-                    <li><a href=".html"></a></li>
+					<li><a href ="build1.html">Build Schedule</a></li>
+				    <li><a href="aboutus.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
                 </ul>
             </nav>
-	
-        	<!--icons-->
-        	<form>
-              <input type="submit" value="settings"></input>
-              <input type="submit" value="profile"></input>
-              <input type="submit" value="contact us"></input>
-              <input type="submit" value="start"></input>
-    	    </form>
-        </body>
-    </html>
+
+    <section>
+        	<p>These are the Common Curriculum classes that fit within your time preferences and do not conflict with a class you are taking for your major. Please select all you would like to take. There is an additional step where you may select non-Common Curriculum classes if you so wish.
+			</p>
+			<b><u>Understanding Cultural Heritage</u></b>
+        	 <ul id="cc">
+   	     	 	load CC courses here, for all 5 sections of CC
+        	 </ul>
+			
+    </section>
+    <section>
+        <div class="page" id="finalize">
+            
+        </div>
+    </section>		
+
+<br></br>
+<a href="build3.html">BACK</a> 
+<a href="build5.html">NEXT</a>        
+</body>
+ </html>
   }
 	
 
