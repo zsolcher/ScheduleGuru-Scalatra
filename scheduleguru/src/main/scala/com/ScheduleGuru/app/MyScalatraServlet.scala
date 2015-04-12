@@ -359,9 +359,10 @@ class MyScalatraServlet extends ScheduleguruStack {
 	<!--menu bar-->
 	<nav>
 		<ul>
-			<li><a href="welcome.html">Home</a></li>
-			<li><a href="aboutus.html">Our Story</a></li>
-			<li><a href="contact.html">Contact us</a></li>
+			  		<li><a href ="welcome.html">Home</a></li>
+					<li><a href ="build1.html">Build Schedule</a></li>
+				    <li><a href="aboutus.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
 		</ul>
 	</nav>
 
