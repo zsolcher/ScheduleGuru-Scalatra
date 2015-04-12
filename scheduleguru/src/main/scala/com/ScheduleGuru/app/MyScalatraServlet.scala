@@ -220,7 +220,7 @@ class MyScalatraServlet extends ScheduleguruStack {
         <center>
 			<h2>A Letter to the User</h2>
         </center>
-        <hr>
+        <hr></hr>
         <p>
             <h3>
 				Dear User,
