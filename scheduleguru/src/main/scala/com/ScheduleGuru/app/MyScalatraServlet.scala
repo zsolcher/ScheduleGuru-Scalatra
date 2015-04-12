@@ -467,6 +467,7 @@ class MyScalatraServlet extends ScheduleguruStack {
 	<meta name="description" content=""></meta>
 	<meta name="keywords" content=""></meta>
 	<link rel="stylesheet" type="text/css" href="./css/master.css"></link>
+	<link rel="stylesheet" type="text/css" href="./css/table.css"></link>
 </head>
 
 <body>
