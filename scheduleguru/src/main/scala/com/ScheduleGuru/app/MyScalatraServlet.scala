@@ -18,6 +18,179 @@ class MyScalatraServlet extends ScheduleguruStack {
         </html>
     }
 
+  get("/build1.html") {
+    <html>
+        <head>
+            <title>MasterPage</title>
+            <meta charset="UTF-8"></meta>
+            <meta name="description" content=""></meta>
+            <meta name="keywords" content=""></meta>
+            <link rel="stylesheet" type="text/css" href="./css/master.css"></link>
+        </head>
+        <body>
+        	<center>
+            	<h1> ScheduleGuru </h1>
+        	</center>
+	
+    	    <!--menu bar-->
+    	    <!--nav>
+                <ul>
+                    <li><a href ="welcome.html">Home</a></li>
+				    <li><a href="aboutus.html">Our Story</a></li>
+                    <li><a href=".html"></a></li>
+                </ul>
+            </nav-->
+	
+        	<!--icons-->
+        	<form>
+              <input type="submit" value="settings"></input>
+              <input type="submit" value="profile"></input>
+              <input type="submit" value="contact us"></input>
+              <input type="submit" value="start"></input>
+    	    </form>
+        </body>
+    </html>
+  }
+
+    get("/build2.html") {
+    <html>
+        <head>
+            <title>MasterPage</title>
+            <meta charset="UTF-8"></meta>
+            <meta name="description" content=""></meta>
+            <meta name="keywords" content=""></meta>
+            <link rel="stylesheet" type="text/css" href="./css/master.css"></link>
+        </head>
+        <body>
+        	<center>
+            	<h1> ScheduleGuru </h1>
+        	</center>
+	
+    	    <!--menu bar-->
+    	    <nav>
+                <ul>
+                    <li><a href ="welcome.html">Home</a></li>
+				    <li><a href="aboutus.html">Our Story</a></li>
+                    <li><a href=".html"></a></li>
+                </ul>
+            </nav>
+	
+        	<!--icons-->
+        	<form>
+              <input type="submit" value="settings"></input>
+              <input type="submit" value="profile"></input>
+              <input type="submit" value="contact us"></input>
+              <input type="submit" value="start"></input>
+    	    </form>
+        </body>
+    </html>
+  }
+
+
+    get("/build3.html") {
+    <html>
+        <head>
+            <title>MasterPage</title>
+            <meta charset="UTF-8"></meta>
+            <meta name="description" content=""></meta>
+            <meta name="keywords" content=""></meta>
+            <link rel="stylesheet" type="text/css" href="./css/master.css"></link>
+        </head>
+        <body>
+        	<center>
+            	<h1> ScheduleGuru </h1>
+        	</center>
+	
+    	    <!--menu bar-->
+    	    <nav>
+                <ul>
+                    <li><a href ="welcome.html">Home</a></li>
+				    <li><a href="aboutus.html">Our Story</a></li>
+                    <li><a href=".html"></a></li>
+                </ul>
+            </nav>
+	
+        	<!--icons-->
+        	<form>
+              <input type="submit" value="settings"></input>
+              <input type="submit" value="profile"></input>
+              <input type="submit" value="contact us"></input>
+              <input type="submit" value="start"></input>
+    	    </form>
+        </body>
+    </html>
+  }
+	
+
+    get("/build4.html") {
+    <html>
+        <head>
+            <title>MasterPage</title>
+            <meta charset="UTF-8"></meta>
+            <meta name="description" content=""></meta>
+            <meta name="keywords" content=""></meta>
+            <link rel="stylesheet" type="text/css" href="./css/master.css"></link>
+        </head>
+        <body>
+        	<center>
+            	<h1> ScheduleGuru </h1>
+        	</center>
+	
+    	    <!--menu bar-->
+    	    <nav>
+                <ul>
+                    <li><a href ="welcome.html">Home</a></li>
+				    <li><a href="aboutus.html">Our Story</a></li>
+                    <li><a href=".html"></a></li>
+                </ul>
+            </nav>
+	
+        	<!--icons-->
+        	<form>
+              <input type="submit" value="settings"></input>
+              <input type="submit" value="profile"></input>
+              <input type="submit" value="contact us"></input>
+              <input type="submit" value="start"></input>
+    	    </form>
+        </body>
+    </html>
+  }
+	
+
+    get("/build5.html") {
+    <html>
+        <head>
+            <title>MasterPage</title>
+            <meta charset="UTF-8"></meta>
+            <meta name="description" content=""></meta>
+            <meta name="keywords" content=""></meta>
+            <link rel="stylesheet" type="text/css" href="./css/master.css"></link>
+        </head>
+        <body>
+        	<center>
+            	<h1> ScheduleGuru </h1>
+        	</center>
+	
+    	    <!--menu bar-->
+    	    <nav>
+                <ul>
+                    <li><a href ="welcome.html">Home</a></li>
+				    <li><a href="aboutus.html">Our Story</a></li>
+                    <li><a href=".html"></a></li>
+                </ul>
+            </nav>
+	
+        	<!--icons-->
+        	<form>
+              <input type="submit" value="settings"></input>
+              <input type="submit" value="profile"></input>
+              <input type="submit" value="contact us"></input>
+              <input type="submit" value="start"></input>
+    	    </form>
+        </body>
+    </html>
+  }
+	
   get("/welcome.html") {
     <html>
         <head>
