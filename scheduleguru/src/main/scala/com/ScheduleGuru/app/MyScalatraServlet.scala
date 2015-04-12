@@ -383,8 +383,8 @@ class MyScalatraServlet extends ScheduleguruStack {
             </nav>
 
 	<section id="aboutus">
-		<p style="background:white; opacity:0.8;">
-			<center style="font-size: 20px; font-family:cursive, verdana;">
+		
+			<center>
 				Our story begin many many days ago, when we were first assigned to this project. We took this journey in an attempt to improve our current model of TigerPaws -- which is a terrible, archiac way of scheduling classes.
 
 				<br></br>
