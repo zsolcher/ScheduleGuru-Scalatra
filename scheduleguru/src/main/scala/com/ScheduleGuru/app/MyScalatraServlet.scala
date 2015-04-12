@@ -355,3 +355,4 @@ class MyScalatraServlet extends ScheduleguruStack {
 
 </html>
 }
+}
