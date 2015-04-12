@@ -341,7 +341,7 @@ class MyScalatraServlet extends ScheduleguruStack {
 </html>
   }
 
-  get("/aboutus.html"){
+ get("/aboutus.html"){
 <html>
 
 <head>
@@ -454,37 +454,43 @@ class MyScalatraServlet extends ScheduleguruStack {
 </html>
   }
 
-  get("/contact.html"){
+get("/contact.html"){
 <html>
 
 <head>
-	<title>Welcome</title>
-	<meta charset="UTF-8"/>
-	<meta name="description" content=""/>
-	<meta name="keywords" content=""/>
-	<link rel="stylesheet" type="text/css" href="./css/master.css"/>
+	<title>Contact</title>
+	<meta charset="UTF-8">
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+	<link rel="stylesheet" type="text/css" href="master.css">
 </head>
 
 <body>
 	<center>
-		<h1> Welcome to ScheduleGuru</h1>
+		<h1> Contact Us</h1>
 	</center>
 
-	<!--menu bar-->
-	<nav>
-		<ul>
-			<li><a href="welcome.html">Home</a></li>
-			<li><a href="aboutus.html">Our Story</a></li>
-			<li><a href="contact.html">Contact us</a></li>
-		</ul>
-	</nav>
+				    <!--menu bar-->
+    	    <nav>
+                <ul>
+                    <li><a href ="welcome.html">Home</a></li>
+					<li><a href ="build1.html">Build Schedule</a></li>
+				    <li><a href="aboutus.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
 
-    <p>
-        This is the contact us page
-    </p>
+<form name="feedbackForm">
+	We welcome your feedback: <br></br>
+	<textarea id="feedbackArea" rows = "20" cols="80">
+		
+	</textarea>
+	<br></br>
+	<input type="submit" value="Send">
+</form>
+	
 
 </body>
 
 </html>
-  }
 }
