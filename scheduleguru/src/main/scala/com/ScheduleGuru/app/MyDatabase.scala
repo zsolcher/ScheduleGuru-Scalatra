@@ -88,6 +88,23 @@ class MyDatabase(connect: Connection) {
     classArr
   }
 
+	def updateUser(userID:String, email:String, password:String, major:String, year:String, firstName:String, lastName:String) {
+		try {
+      val preparedStatement = connect.prepareStatement("UPDATE Users SET Password = ?, Major = ?, Year = ?, FirstName = ?, LastName = ?, Email = ? WHERE UserID = ?");
+      preparedStatement.setString(1, password);
+      preparedStatement.setString(2, major);
+      preparedStatement.setString(3, year);
+      preparedStatement.setString(4, firstName);
+      preparedStatement.setString(5, lastName);
+      preparedStatement.setString(6, email);
+      preparedStatement.setString(7, userID);
+      preparedStatement.executeUpdate()
+
+    } catch {
+      case e: Exception => e.printStackTrace()
+    }
+	}
+
   def inputSameClass(id: Int, classIDOfSame: Int) = {
     try {
       val preparedStatement = connect.prepareStatement("INSERT into SameClasses values (?, ?)");
