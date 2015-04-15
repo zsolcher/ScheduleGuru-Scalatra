@@ -63,6 +63,31 @@ class MyDatabase(connect: Connection) {
     classArr
   }
 
+	def getUserInfoForUserID(userID :String): Array[String] = {
+    var classArr = new Array[String](6)
+    try {
+      val preparedStatement = connect.prepareStatement("SELECT * from Users WHERE UserID = ?");
+      preparedStatement.setString(1, classID);
+      val resultSet = preparedStatement.executeQuery()
+      resultSet.next()
+
+      //Basically this is saying, if the result set wasn't null, we found a class so return it
+      if (!resultSet.isAfterLast()) {
+        // UserID, Email, Password, Major, Year, FirstName, LastName
+        classArr(0) = resultSet.getInt("Email").toString
+        classArr(1) = resultSet.getString("Password")
+        classArr(2) = resultSet.getString("Major")
+        classArr(3) = resultSet.getInt("Year").toString
+        classArr(4) = resultSet.getString	("FirstName")
+        classArr(5) = resultSet.getString("LastName")
+      }
+    } catch {
+      case e: Exception => e.printStackTrace()
+    }
+
+    classArr
+  }
+
   def inputSameClass(id: Int, classIDOfSame: Int) = {
     try {
       val preparedStatement = connect.prepareStatement("INSERT into SameClasses values (?, ?)");
