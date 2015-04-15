@@ -19,6 +19,7 @@ var fontSize = 2;
 var fontBase = 100;
 var backgroundColor = "#EEEEEE";
 
+var divName = "";
 var calendarCourseArray = new Array();
 var canvas = null;
 var ctx;
@@ -59,7 +60,8 @@ function addCalendarClass(toAdd){
 	return true;
 }
 
-function createCalendarUnderDiv(divName){
+function createCalendarUnderDiv(_divName){
+	divName = _divName;
 	canvas = document.createElement("canvas");
 	document.getElementById(divName).appendChild(canvas);
 }
@@ -70,8 +72,8 @@ function deleteCalendar(){
 
 function updateCanvas(){
 	var ctx = canvas.getContext("2d");
-	var currWidth = document.getElementById("buildScheduleArea").offsetWidth*widthFrac;
-	var currHeight = document.getElementById("buildScheduleArea").offsetHeight*heightFrac;
+	var currWidth = document.getElementById(divName).offsetWidth*widthFrac;
+	var currHeight = document.getElementById(divName).offsetHeight*heightFrac;
 
 	if(currWidth < minWidth) currWidth = minWidth;
 	else if(currWidth > maxWidth) currWidth = maxWidth;

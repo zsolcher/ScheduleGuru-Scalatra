@@ -4,18 +4,21 @@ import org.scalatra.sbt._
 import org.scalatra.sbt.PluginKeys._
 import com.mojolly.scalate.ScalatePlugin._
 import ScalateKeys._
+import com.earldouglas.xsbtwebplugin.PluginKeys._
+import com.earldouglas.xsbtwebplugin.WebPlugin._
 
 object ScheduleguruBuild extends Build {
   val Organization = "com.scheduleGuru"
   val Name = "ScheduleGuru"
   val Version = "0.1.0-SNAPSHOT"
-  val ScalaVersion = "2.11.1"
-  val ScalatraVersion = "2.3.0"
+  val ScalaVersion = "2.11.2"
+  val ScalatraVersion = "2.4.0.M2"
 
   lazy val project = Project (
     "scheduleguru",
     file("."),
     settings = ScalatraPlugin.scalatraWithJRebel ++ scalateSettings ++ Seq(
+      port in container.Configuration := 8082,
       organization := Organization,
       name := Name,
       version := Version,
@@ -28,7 +31,10 @@ object ScheduleguruBuild extends Build {
         "ch.qos.logback" % "logback-classic" % "1.1.2" % "runtime",
         "org.eclipse.jetty" % "jetty-webapp" % "9.1.5.v20140505" % "container",
         "org.eclipse.jetty" % "jetty-plus" % "9.1.5.v20140505" % "container",
-        "javax.servlet" % "javax.servlet-api" % "3.1.0"
+        "javax.servlet" % "javax.servlet-api" % "3.1.0",
+        //I added these lines
+        "com.typesafe.slick" %% "slick" % "3.0.0-RC1",
+        "mysql" % "mysql-connector-java" % "5.1.12"
       ),
       scalateTemplateConfig in Compile <<= (sourceDirectory in Compile){ base =>
         Seq(

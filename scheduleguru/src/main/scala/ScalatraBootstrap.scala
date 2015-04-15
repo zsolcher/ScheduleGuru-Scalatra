@@ -1,15 +1,14 @@
 import org.scalatra._
 import org.slf4j.LoggerFactory
-
-import edu.trinity.cs._
+import com.ScheduleGuru.app._
 import javax.servlet.ServletContext
 import slick.driver.JdbcDriver.api._
 import slick.driver.MySQLDriver.simple._
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.Connection
+import java.sql.DriverManager
+import java.sql.PreparedStatement
+import java.sql.ResultSet
+import java.sql.SQLException
 import java.sql.Statement;
 
 class ScalatraBootstrap extends LifeCycle {

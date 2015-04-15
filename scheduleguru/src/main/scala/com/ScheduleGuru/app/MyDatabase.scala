@@ -1,6 +1,5 @@
-package edu.trinity.cs
+package com.ScheduleGuru.app
 
-import edu.trinity.cs._
 import java.sql.ResultSet
 import java.sql.SQLException
 import java.sql.PreparedStatement

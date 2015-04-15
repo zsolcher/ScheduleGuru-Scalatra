@@ -3,16 +3,30 @@ package com.ScheduleGuru.app
 import org.scalatra._
 import scalate.ScalateSupport
 
-class MyScalatraServlet extends ScheduleguruStack {
+class MyScalatraServlet (db: MyDatabase) extends ScheduleguruStack {
   //MasterPage
     get("/"){
+        <html>
+          <head>
+            <script src="./rerouteByLogin.js"></script>
+          </head>
+          <body>
+            <p>
+                Redirection page based on whether or not you are logged in
+            </p>
+          </body>
+        </html>
+    }
+
+     get("/database.html"){
+       val classId = db.getClassIDForSubjectClassSection("CSCI","1320","1")
+       val classInfo = db.getClassInfoForClassID("0"+classId.toString)
         <html>
           <head>
           </head>
           <body>
             <p>
-                Nothing here, go to the
-                <a href = "welcome.html"> welcome page </a>
+              {classInfo}
             </p>
           </body>
         </html>
