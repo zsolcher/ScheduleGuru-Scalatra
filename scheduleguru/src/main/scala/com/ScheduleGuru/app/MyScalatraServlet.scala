@@ -8,7 +8,7 @@ class MyScalatraServlet (db: MyDatabase) extends ScheduleguruStack {
     get("/"){
         <html>
           <head>
-            <script src="./rerouteByLogin.js"></script>
+            <script src="./js/rerouteByLogin.js"></script>
           </head>
           <body>
             <p>
@@ -20,7 +20,8 @@ class MyScalatraServlet (db: MyDatabase) extends ScheduleguruStack {
 
      get("/database.html"){
        val classId = db.getClassIDForSubjectClassSection("CSCI","1320","1")
-       val classInfo = db.getClassInfoForClassID("0"+classId.toString)
+       val classInfo = db.getClassInfoForClassID("50438")
+       println(classInfo)
         <html>
           <head>
           </head>

@@ -30,8 +30,8 @@ class MyDatabase(connect: Connection) {
     }
   }
 
-  def getClassInfoForClassID(classID: String): List[String] = {
-    var list: List[String] = null
+  def getClassInfoForClassID(classID: String): Array[String] = {
+    var classArr = new Array[String](14)
     try {
       val preparedStatement = connect.prepareStatement("SELECT * from AllClasses WHERE ClassID = ?");
       preparedStatement.setString(1, classID);
@@ -40,27 +40,27 @@ class MyDatabase(connect: Connection) {
 
       //Basically this is saying, if the result set wasn't null, we found a class so return it
       if (!resultSet.isAfterLast()) {
-        // ClassID, Name, Department, Number, Section, Days, StartTime, EndTime, Building, RoomNum, Prof, CC, CCSection, Notes
-        list ++ resultSet.getInt("ClassID").toString
-        list ++ resultSet.getString("Name")
-        list ++ resultSet.getString("Department")
-        list ++ resultSet.getString("Number")
-        list ++ resultSet.getInt("Section").toString()
-        list ++ resultSet.getString("Days")
-        list ++ resultSet.getTime("StartTime").toString
-        list ++ resultSet.getTime("EndTime").toString
-        list ++ resultSet.getString("Building")
-        list ++ resultSet.getString("RoomNum")
-        list ++ resultSet.getString("Prof")
-        list ++ resultSet.getInt("CC").toString
-        list ++ resultSet.getInt("CCSection").toString
-        list ++ resultSet.getString("Notes")
+        // ClassID, Name, Department, Number, Section, Days, StartTime, EndTime, Building, RoomNum, Prof, CC, CCSection, Note
+        classArr(0) = resultSet.getInt("ClassID").toString
+        classArr(1) = resultSet.getString("Name")
+        classArr(2) = resultSet.getString("Department")
+        classArr(3) = resultSet.getString("Number")
+        classArr(4) = resultSet.getInt("Section").toString()
+        classArr(5) = resultSet.getString("Days")
+        classArr(6) = resultSet.getTime("StartTime").toString
+        classArr(7) = resultSet.getTime("EndTime").toString
+        classArr(8) = resultSet.getString("Building")
+        classArr(9) = resultSet.getString("RoomNum")
+        classArr(10) = resultSet.getString("Prof")
+        classArr(11) = resultSet.getInt("CC").toString
+        classArr(12) = resultSet.getInt("CCSection").toString
+        classArr(13) = resultSet.getString("Note")
       }
     } catch {
       case e: Exception => e.printStackTrace()
     }
 
-    list
+    classArr
   }
 
   def inputSameClass(id: Int, classIDOfSame: Int) = {
