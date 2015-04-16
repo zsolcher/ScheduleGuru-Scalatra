@@ -24,6 +24,7 @@ class MyScalatraServlet (db: MyDatabase) extends ScheduleguruStack {
        println(classInfo)
         <html>
           <head>
+            <script src="./js/mesh_scala.js"></script>
           </head>
           <body>
             <p>

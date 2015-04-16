@@ -1,0 +1,1 @@
+var javascriptArr = new Array;
