@@ -20,6 +20,11 @@ class ScalatraBootstrap extends LifeCycle {
     val db = new MyDatabase(connect)
     context.mount(new MyScalatraServlet(db), "/*")
     context.mount(new MyLoginServlet(db), "/login")
+    context.mount(new BuildSchedule1Servlet(db),"/build1")
+    context.mount(new BuildSchedule2Servlet(db),"/build2")
+    context.mount(new BuildSchedule3Servlet(db),"/build3")
+    context.mount(new BuildSchedule4Servlet(db),"/build4")
+    context.mount(new BuildSchedule5Servlet(db),"/build5")
 
   }
 
