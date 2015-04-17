@@ -603,6 +603,7 @@ get("/contact.html"){
 <body>
 	<center>
 		<h1> Contact Us</h1>
+		<h2> Need Scalatra - Swagger support to run PHP </h2>
 	</center>
 
 				    <!--menu bar-->
@@ -615,13 +616,13 @@ get("/contact.html"){
                 </ul>
             </nav>
 
-<form name="feedbackForm" action="MAILTO:rbierman@trinity.edu" method="post" enctype="text/plain">
+<form name="feedbackForm" action="form-to-email.php" method="post" enctype="text/plain">
 	Name: <br></br>
 	<input type="text" name="contact_name"></input><br></br>
 	Email: <br></br>
 	<input type="text" name="contact_email" value="your email"></input><br></br>
 	Message: <br></br>
-	<input type="text" name="contact_message" value="type your feedback here" size="50"></input><br></br>
+	<input type="text" name="contact_message" value="type your feedback here" size="50"></input>
 	<textarea id="feedbackArea" rows = "20" cols="80">
 	</textarea>
 	<br></br>
