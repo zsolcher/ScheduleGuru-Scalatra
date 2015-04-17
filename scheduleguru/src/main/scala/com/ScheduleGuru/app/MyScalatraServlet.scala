@@ -615,7 +615,7 @@ get("/contact.html"){
                 </ul>
             </nav>
 
-<form name="feedbackForm" action="MAILTO:scheduleguruapp@gmail.com" method="post" enctype="text/plain">
+<form name="feedbackForm" action="MAILTO:rbierman@trinity.edu" method="post" enctype="text/plain">
 	Name: <br></br>
 	<input type="text" name="contact_name"></input><br></br>
 	Email: <br></br>
