@@ -146,7 +146,7 @@ class MyDatabase(connect: Connection) {
   }
 
   def getUserInfoForUserID(userID: String): Array[String] = {
-    var classArr = new Array[String](6)
+    var classArr = new Array[String](7)
     try {
       val preparedStatement = connect.prepareStatement("SELECT * from Users WHERE UserID = ?");
       preparedStatement.setString(1, userID);
@@ -156,12 +156,39 @@ class MyDatabase(connect: Connection) {
       //Basically this is saying, if the result set wasn't null, we found a class so return it
       if (!resultSet.isAfterLast()) {
         // UserID, Email, Password, Major, Year, FirstName, LastName
-        classArr(0) = resultSet.getInt("Email").toString
-        classArr(1) = resultSet.getString("Password")
-        classArr(2) = resultSet.getString("Major")
-        classArr(3) = resultSet.getInt("Year").toString
-        classArr(4) = resultSet.getString("FirstName")
-        classArr(5) = resultSet.getString("LastName")
+        classArr(0) = resultSet.getInt("UserID").toString
+        classArr(1) = resultSet.getString("Email")
+        classArr(2) = resultSet.getString("Password")
+        classArr(3) = resultSet.getString("Major")
+        classArr(4) = resultSet.getInt("Year").toString
+        classArr(5) = resultSet.getString("FirstName")
+        classArr(6) = resultSet.getString("LastName")
+      }
+    } catch {
+      case e: Exception => e.printStackTrace()
+    }
+
+    classArr
+  }
+
+  def getUserInfoForEmail(email: String): Array[String] = {
+    var classArr = new Array[String](7)
+    try {
+      val preparedStatement = connect.prepareStatement("SELECT * from Users WHERE Email = ?");
+      preparedStatement.setString(1, email);
+      val resultSet = preparedStatement.executeQuery()
+      resultSet.next()
+
+      //Basically this is saying, if the result set wasn't null, we found a class so return it
+      if (!resultSet.isAfterLast()) {
+        // UserID, Email, Password, Major, Year, FirstName, LastName
+        classArr(0) = resultSet.getInt("UserID").toString
+        classArr(1) = resultSet.getString("Email")
+        classArr(2) = resultSet.getString("Password")
+        classArr(3) = resultSet.getString("Major")
+        classArr(4) = resultSet.getInt("Year").toString
+        classArr(5) = resultSet.getString("FirstName")
+        classArr(6) = resultSet.getString("LastName")
       }
     } catch {
       case e: Exception => e.printStackTrace()

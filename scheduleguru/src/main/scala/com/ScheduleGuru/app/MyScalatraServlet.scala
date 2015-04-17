@@ -4,6 +4,7 @@ import org.scalatra._
 import scalate.ScalateSupport
 
 class MyScalatraServlet(db: MyDatabase) extends ScheduleguruStack {
+  var currentUser = "none"
   //MasterPage
   get("/") {
     <html>
@@ -16,6 +17,10 @@ class MyScalatraServlet(db: MyDatabase) extends ScheduleguruStack {
         </p>
       </body>
     </html>
+  }
+
+  post("/currentUser"){
+    currentUser
   }
 
   get("/database") {
@@ -33,7 +38,7 @@ class MyScalatraServlet(db: MyDatabase) extends ScheduleguruStack {
     </html>
   }
 
-  get("/giveBackString"){
+  post("/giveBackString"){
     println("got here and gave back");
     "updated javascript!"
   }
@@ -375,6 +380,14 @@ class MyScalatraServlet(db: MyDatabase) extends ScheduleguruStack {
     </html>
   }
 
+  post("/checkLogin"){
+    val givenUsername = params.get("username")
+    val givenPassword = params.get("password")
+    println("trying to check the login for "+givenUsername.toString+" and "+givenPassword)
+    val actualPassword = db.getUserInfoForEmail(givenUsername.toString)
+    println(actualPassword)
+  }
+
   get("/login") {
     <html>
       <head>
@@ -398,7 +411,7 @@ class MyScalatraServlet(db: MyDatabase) extends ScheduleguruStack {
 		</nav-->
         <!--icons-->
         <section id="loginBox" class="loginForm cf">
-          <form name="login" action="" method="post">
+          <form name="login" action="/checkLogin" method="POST">
             <h2>Registered User</h2>
             <br/>
             <label>Username: </label>
@@ -411,12 +424,12 @@ class MyScalatraServlet(db: MyDatabase) extends ScheduleguruStack {
             <br/>
             <!--submit button-->
             <br/>
-            <button type="button">Login</button>
+            <button type="submit">Login</button>
             <br/>
           </form>
         </section>
         <section id="loginBox" class="loginForm cf">
-          <form name="login" action="" method="post">
+          <form name="newUser" action="" method="post">
             <h2>New User</h2>
             <br/>
             <label>Firstname: </label>

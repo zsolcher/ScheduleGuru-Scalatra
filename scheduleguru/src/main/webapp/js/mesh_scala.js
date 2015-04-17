@@ -14,7 +14,7 @@ function save(){
 			alert(javascriptString)
 		}
 	}
-	xmlhttp.open("GET",window.location.origin+"/giveBackString",true);
+	xmlhttp.open("POST",window.location.origin+"/giveBackString",true);
 	xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
    	xmlhttp.send(data);
 }
