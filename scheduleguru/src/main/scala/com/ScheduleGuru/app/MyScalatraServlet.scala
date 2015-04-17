@@ -18,13 +18,6 @@ class MyScalatraServlet(db: MyDatabase) extends ScheduleguruStack {
     </html>
   }
 
-  get("/kTest") {
-    val arr = db.getAllCCClassesInfoForDays_Start_End("MT", "00:00:00", "24:00:00") 
-    if (arr.size < 1) {
-      <p> nothing to show here folks</p>
-    }
-  }
-
   get("/database.html") {
     val classId = db.getClassIDForSubjectClassSection("CSCI", "1320", "1")
     val classInfo = db.getClassInfoForClassID("50438")
