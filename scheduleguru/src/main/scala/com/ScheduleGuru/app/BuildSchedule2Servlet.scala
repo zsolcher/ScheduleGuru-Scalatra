@@ -4,6 +4,10 @@ import org.scalatra._
 import scalate.ScalateSupport
 
 class BuildSchedule2Servlet(db: MyDatabase) extends ScheduleguruStack {
+  post("/getPreferences"){
+    
+  }
+  
 get("/") {
     <html>
       <head>
@@ -12,6 +16,8 @@ get("/") {
         <meta name="description" content=""></meta>
         <meta name="keywords" content=""></meta>
         <link rel="stylesheet" type="text/css" href="./css/master.css"></link>
+        <script src="/js/saveDataAcrossPages.js"></script>
+				<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
       </head>
       <body>
         <center>
@@ -109,8 +115,7 @@ get("/") {
           </div>
         </section>
         <br></br>
-        <a href="build1">BACK</a>
-        <a href="build3">NEXT</a>
+        <input id="nextButton2" onclick="build2button()" type="button" value="NEXT"></input>
       </body>
     </html>
   }

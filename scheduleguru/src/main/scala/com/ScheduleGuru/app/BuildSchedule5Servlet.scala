@@ -12,6 +12,7 @@ class BuildSchedule5Servlet(db: MyDatabase) extends ScheduleguruStack {
         <meta name="description" content=""></meta>
         <meta name="keywords" content=""></meta>
         <link rel="stylesheet" type="text/css" href="./css/master.css"></link>
+        <script src="js/saveDataAcrossPages.js"></script>
       </head>
       <body>
         <center>
@@ -38,7 +39,7 @@ class BuildSchedule5Servlet(db: MyDatabase) extends ScheduleguruStack {
           <input type="submit" value="Finalize"></input>
         </section>
         <br></br>
-        <a href="build4">BACK</a>
+        <input id="nextButton5" onclick="build5button()" type="button" value="NEXT"></input>
       </body>
     </html>
   }

@@ -4,7 +4,7 @@ import org.scalatra._
 import scalate.ScalateSupport
 
 class BuildSchedule3Servlet(db: MyDatabase) extends ScheduleguruStack {
-get("/") {
+  get("/") {
     val major = "CSCI"
     val majorClasses = db.getAllClassesInfoForDepartment(major)
     <html>
@@ -14,6 +14,7 @@ get("/") {
         <meta name="description" content=""></meta>
         <meta name="keywords" content=""></meta>
         <link rel="stylesheet" type="text/css" href="./css/master.css"></link>
+        <script src="js/saveDataAcrossPages.js"></script>
       </head>
       <body>
         <center>
@@ -30,12 +31,14 @@ get("/") {
         </nav>
         <section>
           <div id="majorClassOptions">
-            <table id = "cc" border="1px solid #7986cb" width = "800px" 
-								font-weight="bold" textAlign="left" align = "center">
+            <table id="cc" border="1px solid #7986cb" width="800px" font-weight="bold" textAlign="left" align="center">
               {
+      
                 for (a <- majorClasses) yield <tr><td><input type="checkbox"></input></td><td>
-                { a(2)}</td><td>{a(3)}</td><td>{a(1)}</td><td>{a(5)} 
-                </td><td>{a(6)+"-"+a(7)} </td><td>{a(10)}</td></tr>
+                                                                                            { a(2) }
+                                                                                          </td><td>{ a(3) }</td><td>{ a(1) }</td><td>
+                                                                                                                                   { a(5) }
+                                                                                                                                 </td><td>{ a(6) + "-" + a(7) } </td><td>{ a(10) }</td></tr>
               }
             </table>
             <br></br>
@@ -43,8 +46,7 @@ get("/") {
           </div>
         </section>
         <br></br>
-        <a href="build2">BACK</a>
-        <a href="build4">NEXT</a>
+        <input id="nextButton3" onclick="build3button()" type="button" value="NEXT"></input>
       </body>
     </html>
   }
