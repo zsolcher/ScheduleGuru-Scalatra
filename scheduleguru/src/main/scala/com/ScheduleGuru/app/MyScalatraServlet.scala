@@ -621,7 +621,7 @@ get("/contact.html"){
 	Email: <br></br>
 	<input type="text" name="contact_email" value="your email"></input>
 	Message: <br></br>
-	<input type="text" name="contact_message" value="type your feedback here" size="50">
+	<input type="text" name="contact_message" value="type your feedback here" size="50"></input>
 	<textarea id="feedbackArea" rows = "20" cols="80">
 	</textarea>
 	<br></br>
