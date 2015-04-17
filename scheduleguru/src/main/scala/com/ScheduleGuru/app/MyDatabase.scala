@@ -101,7 +101,7 @@ class MyDatabase(connect: Connection) {
     outerArr.toArray
   }
 
-  def getAllClassesInfoForCC(days: String, startT: String, endT: String): Array[Array[String]] = {
+  def getAllCCClassesInfoForDays_Start_End(days: String, startT: String, endT: String): Array[Array[String]] = {
 
     var outerArr = List[Array[String]]()
 
