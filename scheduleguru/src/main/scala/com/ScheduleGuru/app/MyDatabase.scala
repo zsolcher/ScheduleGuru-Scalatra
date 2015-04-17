@@ -63,6 +63,43 @@ class MyDatabase(connect: Connection) {
     classArr
   }
 
+  def getAllClassesInfoForDepartment(dep: String): Array[Array[String]] = {
+
+		var outerArr = List[Array[String]]()    
+
+    try {
+      val preparedStatement = connect.prepareStatement("SELECT * from AllClasses WHERE Department = ?");
+      preparedStatement.setString(1, dep);
+      val resultSet = preparedStatement.executeQuery()
+      resultSet.next()
+
+      //Basically this is saying, if the result set wasn't null, we found a class so return it
+      if (!resultSet.isAfterLast()) {
+				val classArr = new Array[String](14)
+        // ClassID, Name, Department, Number, Section, Days, StartTime, EndTime, Building, RoomNum, Prof, CC, CCSection, Note
+        classArr(0) = resultSet.getInt("ClassID").toString
+        classArr(1) = resultSet.getString("Name")
+        classArr(2) = resultSet.getString("Department")
+        classArr(3) = resultSet.getString("Number")
+        classArr(4) = resultSet.getInt("Section").toString()
+        classArr(5) = resultSet.getString("Days")
+        classArr(6) = resultSet.getTime("StartTime").toString
+        classArr(7) = resultSet.getTime("EndTime").toString
+        classArr(8) = resultSet.getString("Building")
+        classArr(9) = resultSet.getString("RoomNum")
+        classArr(10) = resultSet.getString("Prof")
+        classArr(11) = resultSet.getInt("CC").toString
+        classArr(12) = resultSet.getInt("CCSection").toString
+        classArr(13) = resultSet.getString("Note")
+				outerArr ::= classArr
+      }
+    } catch {
+      case e: Exception => e.printStackTrace()
+    }
+
+    outerArr.toArray
+  }
+
 	def getUserInfoForUserID(userID :String): Array[String] = {
     var classArr = new Array[String](6)
     try {
