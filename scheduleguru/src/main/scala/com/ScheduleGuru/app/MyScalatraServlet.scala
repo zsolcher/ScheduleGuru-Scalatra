@@ -4,7 +4,6 @@ import org.scalatra._
 import scalate.ScalateSupport
 
 class MyScalatraServlet(db: MyDatabase) extends ScheduleguruStack {
-  var currentUser = "none"
   //MasterPage
   get("/") {
     <html>
@@ -17,10 +16,6 @@ class MyScalatraServlet(db: MyDatabase) extends ScheduleguruStack {
         </p>
       </body>
     </html>
-  }
-
-  post("/currentUser"){
-    currentUser
   }
 
   get("/database") {

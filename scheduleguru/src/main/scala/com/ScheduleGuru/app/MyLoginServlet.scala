@@ -5,7 +5,7 @@ import org.scalatra._
 class MyLoginServlet(db: MyDatabase) extends ScheduleguruStack {
 
   var currentUser = "none"
-  
+
   post("/checking") {
     val givenUsername = params.get("username")
     val givenPassword = params.get("password")
@@ -18,7 +18,7 @@ class MyLoginServlet(db: MyDatabase) extends ScheduleguruStack {
     }
     <html>
       <head>
-        <script src="./js/rerouteByLogin.js"></script>
+        <script src="/js/rerouteByLogin.js"></script>
       </head>
       <body>
         <p>
@@ -26,6 +26,11 @@ class MyLoginServlet(db: MyDatabase) extends ScheduleguruStack {
         </p>
       </body>
     </html>
+  }
+
+  post("/currentUser") {
+    println("Got to current user") 
+    currentUser
   }
 
   get("/") {
