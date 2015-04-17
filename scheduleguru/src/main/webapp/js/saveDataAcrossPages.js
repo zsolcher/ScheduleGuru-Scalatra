@@ -54,6 +54,7 @@ function testCheckBoxes(checkBox){
 	var start = splitID[3];
 	var end = splitID[4];
 	var classData = {'StartTime':start,'EndTime':end,'Department':dep,'Number':num,'Days':days};
+	classData['ClassID'] = classData['Department']+classData['Number']+classData['StartTime']+classData['EndTime'];
 	if(checkBox.checked){
 		addCalendarClass(classData);
 	}

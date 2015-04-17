@@ -54,7 +54,7 @@ function addCalendarClass(toAdd){
 	toPush['department'] = toAdd['Department'];
 	toPush['num'] = toAdd['Number'];
 	toPush['days'] = toAdd['Days'];
-	toPush['classID'] = 'none';
+	toPush['classID'] = toAdd['Department']+toAdd['Number']+toAdd['StartTime']+toAdd['EndTime'];
 	calendarCourseArray.push(toPush);
 	return true;
 }
@@ -144,7 +144,6 @@ function drawSchedule(){
 		var courseDays = calendarCourseArray[i].days;
 		var startHeight = dayVertGap+interpTime(courseStart)*dayLen;
 		var endHeight = dayVertGap+interpTime(courseEnd)*dayLen;
-		alert(courseDays);
 
 		if(courseDays == "TBA"){
 			return null;
@@ -162,6 +161,7 @@ function drawSchedule(){
 			startWidth += (dayWidth-classWidth)/2;
 			ctx.fillStyle = colorsArray[i];
 			ctx.fillRect(startWidth,startHeight,classWidth,endHeight-startHeight);
+			//alert("woooo "+startWidth+","+startHeight+","+classWidth+","+endHeight-startHeight);
 
 			ctx.font = getFont();
 			ctx.fillStyle = "#000000";
@@ -209,6 +209,7 @@ function removeCalendarClass(classID){
 	var i = 0;
 	while(!found && i < calendarCourseArray.length){
 		var course = calendarCourseArray[i];
+		alert('comparing '+classID+' against '+course['classID']);
 		if(course['classID'] == classID) found = true;
 		else ++i;
 	}
