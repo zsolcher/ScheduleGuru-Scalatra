@@ -13,8 +13,9 @@ class BuildSchedule4Servlet(db: MyDatabase) extends ScheduleguruStack {
         <meta name="keywords" content=""></meta>
         <link rel="stylesheet" type="text/css" href="./css/master.css"></link>
         <script src="js/saveDataAcrossPages.js"></script>
+        <script src="js/calendar.js"></script>
       </head>
-      <body>
+      <body id="build4body" onload="createCalendarUnderDiv('build4body')">
         <center>
           <h1> Build Schedule 4 (CC classes)</h1>
         </center>
