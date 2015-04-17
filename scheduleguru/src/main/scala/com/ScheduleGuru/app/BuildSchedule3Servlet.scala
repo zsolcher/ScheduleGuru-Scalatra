@@ -4,7 +4,7 @@ import org.scalatra._
 import scalate.ScalateSupport
 
 class BuildSchedule3Servlet(db: MyDatabase) extends ScheduleguruStack {
-get("/build3") {
+get("/") {
     val major = "CSCI"
     val majorClasses = db.getAllClassesInfoForDepartment(major)
     <html>

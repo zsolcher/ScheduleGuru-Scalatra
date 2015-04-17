@@ -4,7 +4,7 @@ import org.scalatra._
 import scalate.ScalateSupport
 
 class BuildSchedule4Servlet(db: MyDatabase) extends ScheduleguruStack {
-  get("/build4") {
+  get("/") {
     <html>
       <head>
         <title>build4</title>
