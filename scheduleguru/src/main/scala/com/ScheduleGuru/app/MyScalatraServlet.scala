@@ -617,19 +617,17 @@ get("/contact.html"){
 
 <form name="feedbackForm" action="MAILTO:scheduleguruapp@gmail.com" method="post" enctype="text/plain">
 	Name: <br></br>
-	<input type="text" name="contact_name">
+	<input type="text" name="contact_name"></input>
 	Email: <br></br>
-	<input type="text" name="contact_email" value="your email">
+	<input type="text" name="contact_email" value="your email"></input>
 	Message: <br></br>
 	<input type="text" name="contact_message" value="type your feedback here" size="50">
 	<textarea id="feedbackArea" rows = "20" cols="80">
-		
 	</textarea>
 	<br></br>
 	<input type="submit" value="Send"></input>
 </form>
 	
-
 </body>
 
 </html>
