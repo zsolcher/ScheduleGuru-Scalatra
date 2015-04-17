@@ -18,7 +18,6 @@ var latestEnd = 18;
 var fontSize = 2;
 var fontBase = 100;
 var backgroundColor = "#EEEEEE";
-
 var divName = "";
 var calendarCourseArray = new Array();
 var canvas = null;
@@ -33,8 +32,8 @@ function drawLoop() {
 }
 
 function addCalendarClass(toAdd){
-	if(toAdd['ClassID'] == undefined){
-		alert("classID is undefined in addCalendarClass");
+	if(toAdd['Number'] == undefined){
+		alert("Number is undefined in addCalendarClass");
 		return false;
 	}
 	if(calendarCourseArrayContains(toAdd['ClassID'])){
@@ -51,11 +50,11 @@ function addCalendarClass(toAdd){
 	var toPush = new Object;
 	toPush['start'] = toAdd['StartTime'];
 	toPush['end'] = toAdd['EndTime'];
-	toPush['name'] = toAdd['Name'];
+	toPush['name'] = 'none';
 	toPush['department'] = toAdd['Department'];
 	toPush['num'] = toAdd['Number'];
 	toPush['days'] = toAdd['Days'];
-	toPush['classID'] = toAdd['ClassID'];
+	toPush['classID'] = 'none';
 	calendarCourseArray.push(toPush);
 	return true;
 }
@@ -145,6 +144,7 @@ function drawSchedule(){
 		var courseDays = calendarCourseArray[i].days;
 		var startHeight = dayVertGap+interpTime(courseStart)*dayLen;
 		var endHeight = dayVertGap+interpTime(courseEnd)*dayLen;
+		alert(courseDays);
 
 		if(courseDays == "TBA"){
 			return null;

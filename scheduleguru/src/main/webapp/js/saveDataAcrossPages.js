@@ -25,11 +25,39 @@ function build2button(){
 	window.location.href = "/build3";
 }
 function build3button(){
+	localStorage.setItem("majorClassesSelected",calendarCourseArray);	
 	window.location.href = "/build4";
 }
+function returnIDHelper(arr){
+	var ret = new Array;
+	for(var a =0; a<arr.length; ++a){
+		ret.push(arr[a].id);
+	}
+	return ret;
+}
+
 function build4button(){
 	window.location.href = "/build5";
 }
 function build5button(){
 	
+}
+function testCheckBoxes(checkBox){
+	//checkBox ID is in the form tableID:[tID]:row:[row_num]
+	//so the last element of splitID will be the table row
+	//Need to subtract 1 from rowNum because of the header
+	var checkBoxID = checkBox.id;
+	var splitID = checkBoxID.split(" ");
+	var dep = splitID[0];
+	var num = splitID[1];
+	var days = splitID[2];
+	var start = splitID[3];
+	var end = splitID[4];
+	var classData = {'StartTime':start,'EndTime':end,'Department':dep,'Number':num,'Days':days};
+	if(checkBox.checked){
+		addCalendarClass(classData);
+	}
+	else{
+		removeCalendarClass(classData['ClassID']);
+	}
 }
