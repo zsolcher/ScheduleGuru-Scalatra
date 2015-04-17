@@ -104,7 +104,7 @@ class MyDatabase(connect: Connection) {
     var classArr = new Array[String](6)
     try {
       val preparedStatement = connect.prepareStatement("SELECT * from Users WHERE UserID = ?");
-      preparedStatement.setString(1, classID);
+      preparedStatement.setString(1, userID);
       val resultSet = preparedStatement.executeQuery()
       resultSet.next()
 

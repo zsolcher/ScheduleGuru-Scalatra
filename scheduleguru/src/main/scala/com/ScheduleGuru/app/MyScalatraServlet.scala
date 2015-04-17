@@ -24,6 +24,7 @@ class MyScalatraServlet (db: MyDatabase) extends ScheduleguruStack {
        println(classInfo)
         <html>
           <head>
+            <script src="./js/mesh_scala.js"></script>
           </head>
           <body>
             <p>
@@ -614,16 +615,19 @@ get("/contact.html"){
                 </ul>
             </nav>
 
-<form name="feedbackForm">
-	We welcome your feedback: <br></br>
+<form name="feedbackForm" action="MAILTO:rbierman@trinity.edu" method="post" enctype="text/plain">
+	Name: <br></br>
+	<input type="text" name="contact_name"></input><br></br>
+	Email: <br></br>
+	<input type="text" name="contact_email" value="your email"></input><br></br>
+	Message: <br></br>
+	<input type="text" name="contact_message" value="type your feedback here" size="50"></input><br></br>
 	<textarea id="feedbackArea" rows = "20" cols="80">
-		
 	</textarea>
 	<br></br>
 	<input type="submit" value="Send"></input>
 </form>
 	
-
 </body>
 
 </html>
