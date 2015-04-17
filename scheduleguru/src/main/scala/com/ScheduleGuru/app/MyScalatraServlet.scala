@@ -18,7 +18,7 @@ class MyScalatraServlet(db: MyDatabase) extends ScheduleguruStack {
     </html>
   }
 
-  get("/database.html") {
+  get("/database") {
     val classId = db.getClassIDForSubjectClassSection("CSCI", "1320", "1")
     val classInfo = db.getClassInfoForClassID("50438")
     println(classInfo)
@@ -34,7 +34,7 @@ class MyScalatraServlet(db: MyDatabase) extends ScheduleguruStack {
     </html>
   }
 
-  get("/build1.html") {
+  get("/build1") {
     <html>
       <head>
         <title>build1</title>
@@ -50,10 +50,11 @@ class MyScalatraServlet(db: MyDatabase) extends ScheduleguruStack {
         <!--menu bar-->
         <nav>
           <ul>
-            <li><a href="welcome.html">Home</a></li>
-            <li><a href="build1.html">Build Schedule</a></li>
-            <li><a href="aboutus.html">About Us</a></li>
-            <li><a href="contact.html">Contact</a></li>
+
+            <li><a href="welcome">Home</a></li>
+            <li><a href="build1">Build Schedule</a></li>
+            <li><a href="aboutus">About Us</a></li>
+            <li><a href="contact">Contact</a></li>
           </ul>
         </nav>
         <form name="transcriptForm">
@@ -67,12 +68,12 @@ class MyScalatraServlet(db: MyDatabase) extends ScheduleguruStack {
           Parsed Classes:<br></br>
           <textarea id="parsedclasses" rows="10" cols="80"></textarea>
         </form>
-        <a href="build2.html">NEXT</a>
+        <a href="build2">NEXT</a>
       </body>
     </html>
   }
 
-  get("/build2.html") {
+  get("/build2") {
     <html>
       <head>
         <title>build2</title>
@@ -88,10 +89,10 @@ class MyScalatraServlet(db: MyDatabase) extends ScheduleguruStack {
         <!--menu bar-->
         <nav>
           <ul>
-            <li><a href="welcome.html">Home</a></li>
-            <li><a href="build1.html">Build Schedule</a></li>
-            <li><a href="aboutus.html">About Us</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="welcome">Home</a></li>
+            <li><a href="build1">Build Schedule</a></li>
+            <li><a href="aboutus">About Us</a></li>
+            <li><a href="contact">Contact</a></li>
           </ul>
         </nav>
         <section>
@@ -177,13 +178,15 @@ class MyScalatraServlet(db: MyDatabase) extends ScheduleguruStack {
           </div>
         </section>
         <br></br>
-        <a href="build1.html">BACK</a>
-        <a href="build3.html">NEXT</a>
+        <a href="build1">BACK</a>
+        <a href="build3">NEXT</a>
       </body>
     </html>
   }
 
-  get("/build3.html") {
+  get("/build3") {
+    val major = "CSCI"
+    val majorClasses = db.getAllClassesInfoForDepartment(major)
     <html>
       <head>
         <title>build3</title>
@@ -199,27 +202,34 @@ class MyScalatraServlet(db: MyDatabase) extends ScheduleguruStack {
         <!--menu bar-->
         <nav>
           <ul>
-            <li><a href="welcome.html">Home</a></li>
-            <li><a href="build1.html">Build Schedule</a></li>
-            <li><a href="aboutus.html">About Us</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="welcome">Home</a></li>
+            <li><a href="build1">Build Schedule</a></li>
+            <li><a href="aboutus">About Us</a></li>
+            <li><a href="contact">Contact</a></li>
           </ul>
         </nav>
         <section>
           <div id="majorClassOptions">
-            JavaScript for loading classes in major goes here:
+            <table id = "cc" border="1px solid #7986cb" width = "800px" 
+								font-weight="bold" textAlign="left" align = "center">
+              {
+                for (a <- majorClasses) yield <tr><td><input type="checkbox"></input></td><td>
+                { a(2)}</td><td>{a(3)}</td><td>{a(1)}</td><td>{a(5)} 
+                </td><td>{a(6)+"-"+a(7)} </td><td>{a(10)}</td></tr>
+              }
+            </table>
             <br></br>
             Calendar also goes here
           </div>
         </section>
         <br></br>
-        <a href="build2.html">BACK</a>
-        <a href="build4.html">NEXT</a>
+        <a href="build2">BACK</a>
+        <a href="build4">NEXT</a>
       </body>
     </html>
   }
 
-  get("/build4.html") {
+  get("/build4") {
     <html>
       <head>
         <title>build4</title>
@@ -235,10 +245,10 @@ class MyScalatraServlet(db: MyDatabase) extends ScheduleguruStack {
         <!--menu bar-->
         <nav>
           <ul>
-            <li><a href="welcome.html">Home</a></li>
-            <li><a href="build1.html">Build Schedule</a></li>
-            <li><a href="aboutus.html">About Us</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="welcome">Home</a></li>
+            <li><a href="build1">Build Schedule</a></li>
+            <li><a href="aboutus">About Us</a></li>
+            <li><a href="contact">Contact</a></li>
           </ul>
         </nav>
         <section>
@@ -255,13 +265,13 @@ class MyScalatraServlet(db: MyDatabase) extends ScheduleguruStack {
           </div>
         </section>
         <br></br>
-        <a href="build3.html">BACK</a>
-        <a href="build5.html">NEXT</a>
+        <a href="build3">BACK</a>
+        <a href="build5">NEXT</a>
       </body>
     </html>
   }
 
-  get("/build5.html") {
+  get("/build5") {
     <html>
       <head>
         <title>build5</title>
@@ -277,10 +287,10 @@ class MyScalatraServlet(db: MyDatabase) extends ScheduleguruStack {
         <!--menu bar-->
         <nav>
           <ul>
-            <li><a href="welcome.html">Home</a></li>
-            <li><a href="build1.html">Build Schedule</a></li>
-            <li><a href="aboutus.html">About Us</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="welcome">Home</a></li>
+            <li><a href="build1">Build Schedule</a></li>
+            <li><a href="aboutus">About Us</a></li>
+            <li><a href="contact">Contact</a></li>
           </ul>
         </nav>
         <section>
@@ -295,12 +305,12 @@ class MyScalatraServlet(db: MyDatabase) extends ScheduleguruStack {
           <input type="submit" value="Finalize"></input>
         </section>
         <br></br>
-        <a href="build4.html">BACK</a>
+        <a href="build4">BACK</a>
       </body>
     </html>
   }
 
-  get("/welcome.html") {
+  get("/welcome") {
     <html>
       <head>
         <title>Home</title>
@@ -316,10 +326,10 @@ class MyScalatraServlet(db: MyDatabase) extends ScheduleguruStack {
         <!--menu bar-->
         <nav>
           <ul>
-            <li><a href="welcome.html">Home</a></li>
-            <li><a href="build1.html">Build Schedule</a></li>
-            <li><a href="aboutus.html">About Us</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="welcome">Home</a></li>
+            <li><a href="build1">Build Schedule</a></li>
+            <li><a href="aboutus">About Us</a></li>
+            <li><a href="contact">Contact</a></li>
           </ul>
         </nav>
         <div id="letterArea">
@@ -350,7 +360,7 @@ class MyScalatraServlet(db: MyDatabase) extends ScheduleguruStack {
               <br>
               </br>
               P.S. Please
-              <a href="contact.html">email</a>
+              <a href="contact">email</a>
               us with any feedback :)
               <br>
               </br>
@@ -361,7 +371,7 @@ class MyScalatraServlet(db: MyDatabase) extends ScheduleguruStack {
     </html>
   }
 
-  get("/login.html") {
+  get("/login") {
     <html>
       <head>
         <title>Welcome</title>
@@ -433,7 +443,7 @@ class MyScalatraServlet(db: MyDatabase) extends ScheduleguruStack {
     </html>
   }
 
-  get("/aboutus.html") {
+  get("/aboutus") {
     <html>
       <head>
         <title>About Us</title>
@@ -450,10 +460,10 @@ class MyScalatraServlet(db: MyDatabase) extends ScheduleguruStack {
         <!--menu bar-->
         <nav>
           <ul>
-            <li><a href="welcome.html">Home</a></li>
-            <li><a href="build1.html">Build Schedule</a></li>
-            <li><a href="aboutus.html">About Us</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="welcome">Home</a></li>
+            <li><a href="build1">Build Schedule</a></li>
+            <li><a href="aboutus">About Us</a></li>
+            <li><a href="contact">Contact</a></li>
           </ul>
         </nav>
         <section id="aboutus">
@@ -473,7 +483,7 @@ class MyScalatraServlet(db: MyDatabase) extends ScheduleguruStack {
                     Rob Bierman
                     <br/>
                     <br/>
-                    Our fearless hobbit
+                    Fro like a mf
                   </td>
                 </tr>
                 <tr>
@@ -484,7 +494,7 @@ class MyScalatraServlet(db: MyDatabase) extends ScheduleguruStack {
                     Kendrick James
                     <br/>
                     <br/>
-                    No description needed.
+                    Balla
                   </td>
                 </tr>
                 <tr>
@@ -506,7 +516,7 @@ class MyScalatraServlet(db: MyDatabase) extends ScheduleguruStack {
                     Caleb Olson
                     <br/>
                     <br/>
-                    Where's the Algorithm?!
+                    #Bitches
                   </td>
                 </tr>
                 <tr>
@@ -528,7 +538,7 @@ class MyScalatraServlet(db: MyDatabase) extends ScheduleguruStack {
     </html>
   }
 
-  get("/contact.html") {
+  get("/contact") {
     <html>
       <head>
         <title>Contact</title>
@@ -544,10 +554,10 @@ class MyScalatraServlet(db: MyDatabase) extends ScheduleguruStack {
         <!--menu bar-->
         <nav>
           <ul>
-            <li><a href="welcome.html">Home</a></li>
-            <li><a href="build1.html">Build Schedule</a></li>
-            <li><a href="aboutus.html">About Us</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="welcome">Home</a></li>
+            <li><a href="build1">Build Schedule</a></li>
+            <li><a href="aboutus">About Us</a></li>
+            <li><a href="contact">Contact</a></li>
           </ul>
         </nav>
         <form name="feedbackForm" action="MAILTO:rbierman@trinity.edu" method="post" enctype="text/plain">
