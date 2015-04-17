@@ -615,8 +615,13 @@ get("/contact.html"){
                 </ul>
             </nav>
 
-<form name="feedbackForm">
-	We welcome your feedback: <br></br>
+<form name="feedbackForm" action="MAILTO:scheduleguruapp@gmail.com" method="post" enctype="text/plain">
+	Name: <br></br>
+	<input type="text" name="contact_name">
+	Email: <br></br>
+	<input type="text" name="contact_email" value="your email">
+	Message: <br></br>
+	<input type="text" name="contact_message" value="type your feedback here" size="50">
 	<textarea id="feedbackArea" rows = "20" cols="80">
 		
 	</textarea>
