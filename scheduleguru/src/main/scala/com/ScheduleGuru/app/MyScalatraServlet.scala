@@ -383,9 +383,24 @@ class MyScalatraServlet(db: MyDatabase) extends ScheduleguruStack {
   post("/checkLogin"){
     val givenUsername = params.get("username")
     val givenPassword = params.get("password")
-    println("trying to check the login for "+givenUsername.toString+" and "+givenPassword)
-    val actualPassword = db.getUserInfoForEmail(givenUsername.toString)
-    println(actualPassword)
+    println("trying to check the login for "+givenUsername.get+" and "+givenPassword.get)
+    val userInfo = db.getUserInfoForEmail(givenUsername.get)
+    if(givenPassword.get == userInfo(2)){
+       currentUser = givenUsername.get;
+    }
+    else{
+       currentUser = "none";
+    }
+    <html>
+      <head>
+        <script src="./js/rerouteByLogin.js"></script>
+      </head>
+      <body>
+        <p>
+          Redirection page based on whether or not you are logged in
+        </p>
+      </body>
+    </html>
   }
 
   get("/login") {
