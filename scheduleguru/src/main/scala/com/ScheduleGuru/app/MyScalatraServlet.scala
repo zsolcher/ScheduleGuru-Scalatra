@@ -21,17 +21,21 @@ class MyScalatraServlet(db: MyDatabase) extends ScheduleguruStack {
   get("/database") {
     val classId = db.getClassIDForSubjectClassSection("CSCI", "1320", "1")
     val classInfo = db.getClassInfoForClassID("50438")
-    println(classInfo)
+    val csCourses = db.getAllClassesInfoForDepartment("CSCI")
     <html>
       <head>
         <script src="./js/mesh_scala.js"></script>
       </head>
-      <body>
+      <body onload="save();">
         <p>
-          { classInfo }
         </p>
       </body>
     </html>
+  }
+
+  get("/giveBackString"){
+    println("got here and gave back");
+    "updated javascript!"
   }
 
   get("/build1") {
