@@ -65,7 +65,7 @@ class MyDatabase(connect: Connection) {
 
   def getAllClassesInfoForDepartment(dep: String): Array[Array[String]] = {
 
-		var outerArr = List[Array[String]]()    
+    var outerArr = List[Array[String]]()
 
     try {
       val preparedStatement = connect.prepareStatement("SELECT * from AllClasses WHERE Department = ?");
@@ -74,8 +74,8 @@ class MyDatabase(connect: Connection) {
       resultSet.next()
 
       //Basically this is saying, if the result set wasn't null, we found a class so return it
-      if (!resultSet.isAfterLast()) {
-				val classArr = new Array[String](14)
+      while (!resultSet.isAfterLast()) {
+        var classArr = new Array[String](14)
         // ClassID, Name, Department, Number, Section, Days, StartTime, EndTime, Building, RoomNum, Prof, CC, CCSection, Note
         classArr(0) = resultSet.getInt("ClassID").toString
         classArr(1) = resultSet.getString("Name")
@@ -91,7 +91,8 @@ class MyDatabase(connect: Connection) {
         classArr(11) = resultSet.getInt("CC").toString
         classArr(12) = resultSet.getInt("CCSection").toString
         classArr(13) = resultSet.getString("Note")
-				outerArr ::= classArr
+        outerArr ::= classArr
+        resultSet.next
       }
     } catch {
       case e: Exception => e.printStackTrace()
@@ -100,7 +101,51 @@ class MyDatabase(connect: Connection) {
     outerArr.toArray
   }
 
-	def getUserInfoForUserID(userID :String): Array[String] = {
+  def getAllClassesInfoForCC(days: String, startT: String, endT: String): Array[Array[String]] = {
+
+    var outerArr = List[Array[String]]()
+
+    try {
+      var daysString = ""
+      for (c <- days) {
+        daysString += " AND Days LIKE \"%" + c + "%\""
+      }
+      val preparedStatement = connect.prepareStatement("Select * from AllClasses WHERE StartTime > ? AND EndTime < ? AND CC = 1" + daysString);
+      preparedStatement.setString(1, startT)
+      preparedStatement.setString(2, endT)
+      print(preparedStatement.toString())
+      val resultSet = preparedStatement.executeQuery()
+      resultSet.next()
+
+      //Basically this is saying, if the result set wasn't null, we found a class so return it
+      while (!resultSet.isAfterLast()) {
+        var classArr = new Array[String](14)
+        // ClassID, Name, Department, Number, Section, Days, StartTime, EndTime, Building, RoomNum, Prof, CC, CCSection, Note
+        classArr(0) = resultSet.getInt("ClassID").toString
+        classArr(1) = resultSet.getString("Name")
+        classArr(2) = resultSet.getString("Department")
+        classArr(3) = resultSet.getString("Number")
+        classArr(4) = resultSet.getInt("Section").toString()
+        classArr(5) = resultSet.getString("Days")
+        classArr(6) = resultSet.getTime("StartTime").toString
+        classArr(7) = resultSet.getTime("EndTime").toString
+        classArr(8) = resultSet.getString("Building")
+        classArr(9) = resultSet.getString("RoomNum")
+        classArr(10) = resultSet.getString("Prof")
+        classArr(11) = resultSet.getInt("CC").toString
+        classArr(12) = resultSet.getInt("CCSection").toString
+        classArr(13) = resultSet.getString("Note")
+        outerArr ::= classArr
+        resultSet.next
+      }
+    } catch {
+      case e: Exception => e.printStackTrace()
+    }
+
+    outerArr.toArray
+  }
+
+  def getUserInfoForUserID(userID: String): Array[String] = {
     var classArr = new Array[String](6)
     try {
       val preparedStatement = connect.prepareStatement("SELECT * from Users WHERE UserID = ?");
@@ -115,7 +160,7 @@ class MyDatabase(connect: Connection) {
         classArr(1) = resultSet.getString("Password")
         classArr(2) = resultSet.getString("Major")
         classArr(3) = resultSet.getInt("Year").toString
-        classArr(4) = resultSet.getString	("FirstName")
+        classArr(4) = resultSet.getString("FirstName")
         classArr(5) = resultSet.getString("LastName")
       }
     } catch {
@@ -125,8 +170,8 @@ class MyDatabase(connect: Connection) {
     classArr
   }
 
-	def updateUser(userID:String, email:String, password:String, major:String, year:String, firstName:String, lastName:String) {
-		try {
+  def updateUser(userID: String, email: String, password: String, major: String, year: String, firstName: String, lastName: String) {
+    try {
       val preparedStatement = connect.prepareStatement("UPDATE Users SET Password = ?, Major = ?, Year = ?, FirstName = ?, LastName = ?, Email = ? WHERE UserID = ?");
       preparedStatement.setString(1, password);
       preparedStatement.setString(2, major);
@@ -140,7 +185,7 @@ class MyDatabase(connect: Connection) {
     } catch {
       case e: Exception => e.printStackTrace()
     }
-	}
+  }
 
   def inputSameClass(id: Int, classIDOfSame: Int) = {
     try {
