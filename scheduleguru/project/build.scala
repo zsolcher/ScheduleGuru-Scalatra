@@ -18,7 +18,7 @@ object ScheduleguruBuild extends Build {
     "scheduleguru",
     file("."),
     settings = ScalatraPlugin.scalatraWithJRebel ++ scalateSettings ++ Seq(
-      port in container.Configuration := 8092,
+      port in container.Configuration := 8079,
       organization := Organization,
       name := Name,
       version := Version,

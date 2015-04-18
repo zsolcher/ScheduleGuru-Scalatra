@@ -33,7 +33,8 @@ class BuildSchedule3Servlet(db: MyDatabase) extends ScheduleguruStack {
         </nav>
         <section>
           <div id="majorClassOptions">
-            <table id="majortable" border="1px solid #7986cb" width="800px" font-weight="bold" textAlign="left" align="center">
+            <div id="tbleDiv" style="width:750px; float:left;">
+            <table id="majortable" border="1px solid #7986cb" width="750px" font-weight="bold" textAlign="left" align="center">
               {
                 var counter = 0;
                 var checkBoxID = "chckBox" + counter.toString()
@@ -47,8 +48,7 @@ class BuildSchedule3Servlet(db: MyDatabase) extends ScheduleguruStack {
 
               }
             </table>
-            <br></br>
-            Calendar also goes here
+          </div>
           </div>
         </section>
         <br></br>

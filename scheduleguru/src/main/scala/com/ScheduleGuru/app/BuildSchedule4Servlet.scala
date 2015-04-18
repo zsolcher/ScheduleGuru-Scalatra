@@ -55,7 +55,8 @@ class BuildSchedule4Servlet(db: MyDatabase) extends ScheduleguruStack {
             These are the Common Curriculum classes that fit within your time preferences and do not conflict with a class you are taking for your major. Please select all you would like to take. There is an additional step where you may select non-Common Curriculum classes if you so wish.
           </p>
           <b><u>Understanding Cultural Heritage</u></b>
-          <table id="cctable1" border="1px solid #7986cb" width="800px" font-weight="bold" textAlign="left" align="center">
+          <div id="tbleDiv" style="width: 750px; float: left;">
+          <table id="cctable1" border="1px solid #7986cb" width="750px" font-weight="bold" textAlign="left" align="center">
             {
               possibleCCClasses.map(a => <tr>
                                            <td> <input type="checkbox" onclick="testCheckBoxes(this)" name="ccclasses" id={ a(2) + " " + a(3) + " " + a(5) + " " + a(6) + " " + a(7) }></input></td>
@@ -64,6 +65,7 @@ class BuildSchedule4Servlet(db: MyDatabase) extends ScheduleguruStack {
                 </tr>)
             }
           </table>
+        </div>
         </section>
         <section>
           <div class="page" id="finalize">
