@@ -27,10 +27,11 @@ function build2button(){
 	var majorlist = document.getElementById("selectMajor");
 	var major = majorlist.options[majorlist.selectedIndex].value;
 	localStorage.setItem("major",major);
+	localStorage.setItem("majorClassesSelected",null);
 	window.location.href = "/build3";
 }
 function build3button(){
-	localStorage.setItem("majorClassesSelected",calendarCourseArray);
+	localStorage.setItem("majorClassesSelected",JSON.stringify(calendarCourseArray));
 	var xmlhttp;
 	if (window.XMLHttpRequest)
   		xmlhttp=new XMLHttpRequest();
@@ -41,6 +42,7 @@ function build3button(){
 	xmlhttp.send("mwf="+localStorage.getItem("mwf")+"&tr="+localStorage.getItem("tr")+"&sT="+localStorage.getItem("sT")+"&eT="+localStorage.getItem("eT"));
 	window.location.href = "/build4";
 }
+
 function returnIDHelper(arr){
 	var ret = new Array;
 	for(var a =0; a<arr.length; ++a){
@@ -50,6 +52,7 @@ function returnIDHelper(arr){
 }
 
 function build4button(){
+	localStorage.setItem("majorClassesSelected",JSON.stringify(calendarCourseArray));
 	window.location.href = "/build5";
 }
 function build5button(){
@@ -69,7 +72,7 @@ function testCheckBoxes(checkBox){
 	var classData = {'StartTime':start,'EndTime':end,'Department':dep,'Number':num,'Days':days};
 	classData['ClassID'] = classData['Department']+classData['Number']+classData['StartTime']+classData['EndTime'];
 	if(checkBox.checked){
-		addCalendarClass(classData);
+		if(!addCalendarClass(classData)) checkBox.checked = false;
 	}
 	else{
 		removeCalendarClass(classData['ClassID']);
