@@ -37,12 +37,12 @@ function addCalendarClass(toAdd){
 		return false;
 	}
 	if(calendarCourseArrayContains(toAdd['ClassID'])){
-		alert("already added that course");
+		alert("Already added that course");
 		return false;
 	}
 	var overlapCourse = checkOverlap(toAdd);
 	if(overlapCourse != -1){
-		var overlapName = overlapCourse['name'];
+		var overlapName = overlapCourse['department']+overlapCourse['num'];
 		alert("Selected course overlaps with:\n\n"+overlapName+"\n\nPlease uncheck that course first");
 		return false;
 	}
@@ -209,7 +209,7 @@ function removeCalendarClass(classID){
 	var i = 0;
 	while(!found && i < calendarCourseArray.length){
 		var course = calendarCourseArray[i];
-		alert('comparing '+classID+' against '+course['classID']);
+		//alert('comparing '+classID+' against '+course['classID']);
 		if(course['classID'] == classID) found = true;
 		else ++i;
 	}
