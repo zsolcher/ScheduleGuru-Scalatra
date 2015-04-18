@@ -110,10 +110,12 @@ class MyDatabase(connect: Connection) {
       for (c <- days) {
         daysString += " AND Days LIKE \"%" + c + "%\""
       }
+      if(days == "mwftr" || days == "mtwrf"){
+        daysString = ""
+      }
       val preparedStatement = connect.prepareStatement("Select * from AllClasses WHERE StartTime > ? AND EndTime < ? AND CC = 1" + daysString);
       preparedStatement.setString(1, startT)
       preparedStatement.setString(2, endT)
-      print(preparedStatement.toString())
       val resultSet = preparedStatement.executeQuery()
       resultSet.next()
 

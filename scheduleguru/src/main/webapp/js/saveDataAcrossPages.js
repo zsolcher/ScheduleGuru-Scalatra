@@ -1,3 +1,8 @@
+function ajaxCall(info,location){
+	xmlhttp.open("POST",location,true);
+	xmlhttp.send(info);
+}
+
 
 function build1button(){
 	window.location.href = "/build2";
@@ -25,7 +30,15 @@ function build2button(){
 	window.location.href = "/build3";
 }
 function build3button(){
-	localStorage.setItem("majorClassesSelected",calendarCourseArray);	
+	localStorage.setItem("majorClassesSelected",calendarCourseArray);
+	var xmlhttp;
+	if (window.XMLHttpRequest)
+  		xmlhttp=new XMLHttpRequest();
+  	else
+  		xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+	xmlhttp.open("POST",window.location.origin+"/build4/getPreferences",false);
+	xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+	xmlhttp.send("mwf="+localStorage.getItem("mwf")+"&tr="+localStorage.getItem("tr")+"&sT="+localStorage.getItem("sT")+"&eT="+localStorage.getItem("eT"));
 	window.location.href = "/build4";
 }
 function returnIDHelper(arr){
