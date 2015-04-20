@@ -29,7 +29,7 @@ class BuildSchedule4Servlet(db: MyDatabase) extends ScheduleguruStack {
     val possibleCCClasses = db.getAllCCClassesInfoForDays_Start_End(mwf + tr, sT, eT)
     <html>
       <head>
-        <title>build4</title>
+        <title>build3</title>
         <meta charset="UTF-8"></meta>
         <meta name="description" content=""></meta>
         <meta name="keywords" content=""></meta>
@@ -39,7 +39,7 @@ class BuildSchedule4Servlet(db: MyDatabase) extends ScheduleguruStack {
       </head>
       <body id="build4body" onload="createCalendarUnderDiv('build4body')">
         <center>
-          <h1> Build Schedule 4 (CC classes)</h1>
+          <h1> Build Schedule 3 (CC classes)</h1>
         </center>
         <!--menu bar-->
         <nav>

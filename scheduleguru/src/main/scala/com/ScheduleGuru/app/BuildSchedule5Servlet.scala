@@ -7,16 +7,17 @@ class BuildSchedule5Servlet(db: MyDatabase) extends ScheduleguruStack {
   get("/") {
     <html>
       <head>
-        <title>build5</title>
+        <title>build4</title>
         <meta charset="UTF-8"></meta>
         <meta name="description" content=""></meta>
         <meta name="keywords" content=""></meta>
         <link rel="stylesheet" type="text/css" href="./css/master.css"></link>
         <script src="js/saveDataAcrossPages.js"></script>
+        <script src="js/calendar.js"></script>
       </head>
-      <body>
+      <body id="build5body" onload="createCalendarUnderDiv('build5body');">
         <center>
-          <h1> Build Schedule 5 (Finalize)</h1>
+          <h1> Build Schedule 4 (Finalize)</h1>
         </center>
         <!--menu bar-->
         <nav>
