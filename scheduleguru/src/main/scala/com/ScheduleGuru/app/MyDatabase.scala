@@ -235,6 +235,15 @@ class MyDatabase(connect: Connection) {
     preparedStatement.executeUpdate();
   }
 
+  def createUser(fname: String, lname: String, email: String, pw: String) = {
+    val preparedStatement = connect.prepareStatement("INSERT into Users values (?, ?, ?, ?)");
+    preparedStatement.setString(1, "" + fname);
+    preparedStatement.setString(2, "" + lname);
+    preparedStatement.setString(3, "" + email);
+    preparedStatement.setString(4, "" + pw);
+    preparedStatement.executeUpdate();
+  }
+  
   def clearTable(tableName: String) {
     // Clears the
     try {

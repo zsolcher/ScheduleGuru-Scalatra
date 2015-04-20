@@ -28,6 +28,23 @@ class MyLoginServlet(db: MyDatabase) extends ScheduleguruStack {
     </html>
   }
 
+  //Should I create another post method (post("/createuser")
+  
+  post("createuser") {
+    val fname = params.get("fname").get
+    val lname = params.get("lname").get
+    val email = params.get("email").get
+    val pw1 = params.get("password1").get
+    val pw2 = params.get("password2").get
+    
+    if(pw1 != pw2) {
+      //give user an error and ask for reentering of pw's
+      //How should I do this?
+    } else {
+      db.createUser(fname, lname, email, pw1)
+    }
+  }
+  
   post("/currentUser") {
     println("Got to current user") 
     currentUser
@@ -73,8 +90,8 @@ class MyLoginServlet(db: MyDatabase) extends ScheduleguruStack {
             <br/>
           </form>
         </section>
-        <section id="loginBox" class="loginForm cf">
-          <form name="newUser" action="" method="post">
+        <section id="registerBox" class="loginForm cf">
+          <form name="newUser" action="/login/createuser" method="post">
             <h2>New User</h2>
             <br/>
             <label>Firstname: </label>
@@ -90,14 +107,14 @@ class MyLoginServlet(db: MyDatabase) extends ScheduleguruStack {
             <br/>
             <br/>
             <label>Password: </label>
-            <input id="password" name="password" placeholder="******" type="password"></input>
+            <input id="password1" name="password1" placeholder="******" type="password"></input>
             <br/>
             <br/>
             <label>Re-Enter Password: </label>
-            <input id="password" name="password" placeholder="******" type="password"></input>
+            <input id="password2" name="password2" placeholder="******" type="password"></input>
             <br/>
             <br/>
-            <button type="button">Create Account</button>
+            <button type="submit">Create Account</button>
             <br/>
           </form>
         </section>
