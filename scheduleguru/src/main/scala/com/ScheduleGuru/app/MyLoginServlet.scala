@@ -30,13 +30,19 @@ class MyLoginServlet(db: MyDatabase) extends ScheduleguruStack {
 
   //Should I create another post method (post("/createuser")
   
-  post("createuser") {
+  post("/createuser") {
     val fname = params.get("fname").get
     val lname = params.get("lname").get
     val email = params.get("email").get
     val pw1 = params.get("password1").get
     val pw2 = params.get("password2").get
     
+    println("fname = " + fname)
+    println("lname = " + lname)
+    println("email = " + email)
+    println("pw1 = " + pw1)
+    println("pw2 = " + pw2)
+
     if(pw1 != pw2) {
       //give user an error and ask for reentering of pw's
       //How should I do this?
