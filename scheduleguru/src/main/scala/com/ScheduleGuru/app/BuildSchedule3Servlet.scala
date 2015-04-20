@@ -9,7 +9,7 @@ class BuildSchedule3Servlet(db: MyDatabase) extends ScheduleguruStack {
     val majorClasses = db.getAllClassesInfoForDepartment(major)
     <html>
       <head>
-        <title>build3</title>
+        <title>build2</title>
         <meta charset="UTF-8"></meta>
         <meta name="description" content=""></meta>
         <meta name="keywords" content=""></meta>
@@ -20,7 +20,7 @@ class BuildSchedule3Servlet(db: MyDatabase) extends ScheduleguruStack {
       </head>
       <body id="body3build" onload="createCalendarUnderDiv('body3build');">
         <center>
-          <h1> Build Schedule 3 (Classes in the Major)</h1>
+          <h1> Build Schedule 2 (Classes in the Major)</h1>
         </center>
         <!--menu bar-->
         <nav>

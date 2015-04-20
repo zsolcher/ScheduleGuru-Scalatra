@@ -11,7 +11,7 @@ class BuildSchedule2Servlet(db: MyDatabase) extends ScheduleguruStack {
 get("/") {
     <html>
       <head>
-        <title>build2</title>
+        <title>build1</title>
         <meta charset="UTF-8"></meta>
         <meta name="description" content=""></meta>
         <meta name="keywords" content=""></meta>
@@ -21,7 +21,7 @@ get("/") {
       </head>
       <body>
         <center>
-          <h1> Build Schedule 2</h1>
+          <h1> Build Schedule 1</h1>
         </center>
         <!--menu bar-->
         <nav>
