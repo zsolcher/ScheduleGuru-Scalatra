@@ -44,11 +44,22 @@ class MyLoginServlet(db: MyDatabase) extends ScheduleguruStack {
     println("pw2 = " + pw2)
 
     if(pw1 != pw2) {
-      //give user an error and ask for reentering of pw's
-      //How should I do this?
+      currentUser = "none";
     } else {
       db.createUser(fname, lname, email, pw1)
+      currentUser = email;
     }
+    
+    <html>
+      <head>
+        <script src="/js/rerouteByLogin.js"></script>
+      </head>
+      <body>
+        <p>
+          Redirection page based on whether or not you are logged in.
+        </p>
+      </body>
+    </html>
   }
   
   post("/currentUser") {
