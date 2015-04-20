@@ -241,7 +241,6 @@ class MyDatabase(connect: Connection) {
     preparedStatement.setString(2, "" + lname);
     preparedStatement.setString(3, "" + email);
     preparedStatement.setString(4, "" + pw);
-    println("statement = " + preparedStatement.toString)
     preparedStatement.executeUpdate();
   }
   

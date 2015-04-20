@@ -25,7 +25,7 @@ class ScalatraBootstrap extends LifeCycle {
     context.mount(new BuildSchedule3Servlet(db),"/build3")
     context.mount(new BuildSchedule4Servlet(db),"/build4")
     context.mount(new BuildSchedule5Servlet(db),"/build5")
-
+    context.mount(new UpdateUserServlet(db), "/updateUser")
   }
 
   override def destroy(context: ServletContext) {
