@@ -146,29 +146,26 @@ function drawSchedule(){
 		var startHeight = dayVertGap+interpTime(courseStart)*dayLen;
 		var endHeight = dayVertGap+interpTime(courseEnd)*dayLen;
 
-		if(courseDays == "TBA"){
-			return null;
-		}
+		if(courseDays != "TBA"){
+			for(var j = 0; j < courseDays.length; ++j){
+				var startWidth = timeGap;
+				if(courseDays[j] == 'M') startWidth;
+				else if(courseDays[j] == 'T') startWidth += 1*(dayWidth+dayGap);
+				else if(courseDays[j] == 'W') startWidth += 2*(dayWidth+dayGap);
+				else if(courseDays[j] == 'R') startWidth += 3*(dayWidth+dayGap);
+				else if(courseDays[j] == 'F') startWidth += 4*(dayWidth+dayGap);
+				else if(courseDays[j] == 'S') startWidth += 5*(dayWidth+dayGap);
+				else if(courseDays[j] == 'U') startWidth += 6*(dayWidth+dayGap);
+				startWidth += (dayWidth-classWidth)/2;
+				ctx.fillStyle = colorsArray[i];
+				ctx.fillRect(startWidth,startHeight,classWidth,endHeight-startHeight);
 
-		for(var j = 0; j < courseDays.length; ++j){
-			var startWidth = timeGap;
-			if(courseDays[j] == 'M') startWidth;
-			else if(courseDays[j] == 'T') startWidth += 1*(dayWidth+dayGap);
-			else if(courseDays[j] == 'W') startWidth += 2*(dayWidth+dayGap);
-			else if(courseDays[j] == 'R') startWidth += 3*(dayWidth+dayGap);
-			else if(courseDays[j] == 'F') startWidth += 4*(dayWidth+dayGap);
-			else if(courseDays[j] == 'S') startWidth += 5*(dayWidth+dayGap);
-			else if(courseDays[j] == 'U') startWidth += 6*(dayWidth+dayGap);
-			startWidth += (dayWidth-classWidth)/2;
-			ctx.fillStyle = colorsArray[i];
-			ctx.fillRect(startWidth,startHeight,classWidth,endHeight-startHeight);
-			//alert("woooo "+startWidth+","+startHeight+","+classWidth+","+endHeight-startHeight);
-
-			ctx.font = getFont();
-			ctx.fillStyle = "#000000";
-			ctx.textAlign = "center";
-			ctx.textBaseline = "middle";
-			ctx.fillText(courseDep+" "+courseNum,startWidth+classWidth/2,(startHeight+endHeight)/2)
+				ctx.font = getFont();
+				ctx.fillStyle = "#000000";
+				ctx.textAlign = "center";
+				ctx.textBaseline = "middle";
+				ctx.fillText(courseDep+" "+courseNum,startWidth+classWidth/2,(startHeight+endHeight)/2)
+			}
 		}
 	}
 }

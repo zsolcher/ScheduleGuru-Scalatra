@@ -26,7 +26,8 @@ class BuildSchedule3Servlet(db: MyDatabase) extends ScheduleguruStack {
         <nav>
           <ul>
             <li><a href="welcome">Home</a></li>
-            <li><a href="build1">Build Schedule</a></li>
+            <li><a href="build2">Build Schedule</a></li>
+            <li><a href="updateUser">Account</a></li>
             <li><a href="aboutus">About Us</a></li>
             <li><a href="contact">Contact</a></li>
           </ul>
