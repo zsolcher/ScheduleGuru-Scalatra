@@ -236,7 +236,7 @@ class MyDatabase(connect: Connection) {
   }
 
   def createUser(fname: String, lname: String, email: String, pw: String) = {
-    val preparedStatement = connect.prepareStatement("INSERT into Users values (?, ?, ?, ?)");
+    val preparedStatement = connect.prepareStatement("INSERT into Users (FirstName, LastName, Email, Password) values (?, ?, ?, ?)");
     preparedStatement.setString(1, "" + fname);
     preparedStatement.setString(2, "" + lname);
     preparedStatement.setString(3, "" + email);
