@@ -25,10 +25,14 @@ function build2button(){
 	localStorage.setItem("sT",sT);
 	localStorage.setItem("eT",eT);
 	var majorlist = document.getElementById("selectMajor");
-	var major = majorlist.options[majorlist.selectedIndex].value;
+	var unparsedMajor = majorlist.options[majorlist.selectedIndex].value;
+	var openSplit = unparsedMajor.split("(");
+	var closedSplit = openSplit[openSplit.length-1].split(")");
+	var splitLen = closedSplit.length;
+	var major = closedSplit[splitLen-2];
 	localStorage.setItem("major",major);
 	localStorage.setItem("majorClassesSelected",null);
-	window.location.href = "/build3";
+	window.location.href = "/build3/"+major;
 }
 function build3button(){
 	localStorage.setItem("majorClassesSelected",JSON.stringify(calendarCourseArray));
@@ -41,6 +45,18 @@ function build3button(){
 	xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
 	xmlhttp.send("mwf="+localStorage.getItem("mwf")+"&tr="+localStorage.getItem("tr")+"&sT="+localStorage.getItem("sT")+"&eT="+localStorage.getItem("eT"));
 	window.location.href = "/build4";
+}
+
+function getMajor(){
+	alert("in here");
+	var xmlhttp;
+	if (window.XMLHttpRequest)
+  		xmlhttp=new XMLHttpRequest();
+  	else
+  		xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+	xmlhttp.open("POST",window.location.origin+"/build3/getMajor",false);
+	xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+	xmlhttp.send("major="+localStorage.getItem("major"));
 }
 
 function returnIDHelper(arr){

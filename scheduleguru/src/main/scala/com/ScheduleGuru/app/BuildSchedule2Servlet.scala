@@ -37,50 +37,38 @@ get("/") {
           <div class="page" id="pagePreferences">
             <div class="preferenceArea">
               <label for="selectMajor">Choose your major: </label>
-              <select id="selectMajor" onchange="majorOnChangeResponse();">
-                <option>Undecided</option>
-                <option>Anthropology</option>
-                <option>Art</option>
-                <option>Art History</option>
-                <option>Biology</option>
-                <option>Biochemistry *</option>
-                <option>Biochemistry and Molecular Biology *</option>
-                <option>Business Administration</option>
-                <option>Chemistry</option>
-                <option>Applied Chemistry</option>
-                <option>Chemistry with High School Teaching Certification</option>
-                <option>Chinese Studies</option>
-                <option>Ancient Mediterranean Studies</option>
-                <option>Classical Languages *</option>
-                <option>Communication **</option>
-                <option>Computer Science</option>
-                <option>Computing as a Second Major</option>
-                <option>Economics</option>
-                <option>Engineering Science *</option>
-                <option>English</option>
-                <option>Environmental Studies</option>
-                <option>French</option>
-                <option>Geosciences</option>
-                <option>German Studies</option>
-                <option>Greek</option>
-                <option>History</option>
-                <option>Human Communication</option>
-                <option>International Studies</option>
-                <option>Latin</option>
-                <option>Mathematics</option>
-                <option>Mathematical Finance</option>
-                <option>Music</option>
-                <option>Neuroscience *</option>
-                <option>Philosophy</option>
-                <option>Physics</option>
-                <option>Political Science</option>
-                <option>Psychology</option>
-                <option>Religion</option>
-                <option>Russian</option>
-                <option>Sociology</option>
-                <option>Spanish</option>
-                <option>Theatre</option>
-                <option>Urban Studies</option>
+              <select id="selectMajor">
+                <option>Undecided (CSCI)</option>
+                <option>Anthropology (ANTH)</option>
+                <option>Art (ART)</option>
+                <option>Art History (ARTH)</option>
+                <option>Biology (BIOL)</option>
+                <option>Business Administration (BUSN)</option>
+                <option>Chemistry (CHEM)</option>
+                <option>Chinese Studies (CHIN)</option>
+                <option>Classical Languages (CLAS)</option>
+                <option>Communication (COMM)</option>
+                <option>Computer Science (CSCI)</option>
+                <option>Economics (ECON)</option>
+                <option>Engineering Science (ENGR)</option>
+                <option>English (ENGL)</option>
+                <option>French (FREN)</option>
+                <option>Geosciences (GEOS)</option>
+                <option>German Studies (GERM)</option>
+                <option>History (HIST)</option>
+                <option>Human Communication (HCOM)</option>
+                <option>Mathematics (MATH)</option>
+                <option>Music (MUSC)</option>
+                <option>Neuroscience (NEUR)</option>
+                <option>Philosophy (PHIL)</option>
+                <option>Physics (PHYS)</option>
+                <option>Psychology (PSYC)</option>
+                <option>Religion (RELI)</option>
+                <option>Russian (RUSS)</option>
+                <option>Sociology (SOCI)</option>
+                <option>Spanish (SPAN)</option>
+                <option>Theatre (THTR)</option>
+                <option>Urban Studies (URBS)</option>
               </select>
               <br></br>
               <br></br>
@@ -96,21 +84,21 @@ get("/") {
               <br></br>
               <label for="radioGroupStart">What time do you want the latest class to end? </label>
               <br></br>
-              <input type="radio" name="radioEnd" value="No Preference" checked="true" onchange="preferedEndOnChange(this);">No Preference</input>
-              <input type="radio" name="radioEnd" value="11:20:00" onchange="preferedEndOnChange(this);">11:20</input>
-              <input type="radio" name="radioEnd" value="12:20:00" onchange="preferedEndOnChange(this);">12:20</input>
-              <input type="radio" name="radioEnd" value="13:20:00" onchange="preferedEndOnChange(this);">1:20</input>
-              <input type="radio" name="radioEnd" value="14:20:00" onchange="preferedEndOnChange(this);">2:20</input>
-              <input type="radio" name="radioEnd" value="15:55:00" onchange="preferedEndOnChange(this);">3:55</input>
+              <input type="radio" name="radioEnd" value="No Preference" checked="true">No Preference</input>
+              <input type="radio" name="radioEnd" value="11:20:00">11:20</input>
+              <input type="radio" name="radioEnd" value="12:20:00">12:20</input>
+              <input type="radio" name="radioEnd" value="13:20:00">1:20</input>
+              <input type="radio" name="radioEnd" value="14:20:00">2:20</input>
+              <input type="radio" name="radioEnd" value="15:55:00">3:55</input>
               <br></br>
               <br></br>
               <label for="divDaysAvailable">Which days do you want to have class? </label>
               <br></br>
-              <input type="checkbox" name="days" value="M" checked="true" onchange="preferedDaysOnChange(this);">Monday</input>
-              <input type="checkbox" name="days" value="T" checked="true" onchange="preferedDaysOnChange(this);">Tuesday</input>
-              <input type="checkbox" name="days" value="W" checked="true" onchange="preferedDaysOnChange(this);">Wednesday</input>
-              <input type="checkbox" name="days" value="R" checked="true" onchange="preferedDaysOnChange(this);">Thursday</input>
-              <input type="checkbox" name="days" value="F" checked="true" onchange="preferedDaysOnChange(this);">Friday</input>
+              <input type="checkbox" name="days" value="M" checked="true">Monday</input>
+              <input type="checkbox" name="days" value="T" checked="true">Tuesday</input>
+              <input type="checkbox" name="days" value="W" checked="true">Wednesday</input>
+              <input type="checkbox" name="days" value="R" checked="true">Thursday</input>
+              <input type="checkbox" name="days" value="F" checked="true">Friday</input>
               <br></br>
             </div>
           </div>

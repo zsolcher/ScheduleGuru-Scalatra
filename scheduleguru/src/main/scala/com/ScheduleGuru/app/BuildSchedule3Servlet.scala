@@ -4,19 +4,24 @@ import org.scalatra._
 import scalate.ScalateSupport
 
 class BuildSchedule3Servlet(db: MyDatabase) extends ScheduleguruStack {
-  get("/") {
-    val major = "CSCI"
-    val majorClasses = db.getAllClassesInfoForDepartment(major)
+  var major = "CSCI"
+  var majorClasses = db.getAllClassesInfoForDepartment(major)
+ 
+  get("/:major") {
+    println("printing: "+params("major"))
+    major = params("major")
+    majorClasses = db.getAllClassesInfoForDepartment(major)
+
     <html>
       <head>
         <title>build2</title>
         <meta charset="UTF-8"></meta>
         <meta name="description" content=""></meta>
         <meta name="keywords" content=""></meta>
-        <link rel="stylesheet" type="text/css" href="./css/master.css"></link>
-        <script src="js/saveDataAcrossPages.js"></script>
+        <link rel="stylesheet" type="text/css" href="../css/master.css"></link>
+        <script src="../js/saveDataAcrossPages.js"></script>
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-				<script src="js/calendar.js"></script>
+		<script src="../js/calendar.js"></script>
       </head>
       <body id="body3build" onload="createCalendarUnderDiv('body3build');">
         <center>
