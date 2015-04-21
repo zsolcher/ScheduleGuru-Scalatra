@@ -36,6 +36,7 @@ class BuildSchedule4Servlet(db: MyDatabase) extends ScheduleguruStack {
         <link rel="stylesheet" type="text/css" href="./css/master.css"></link>
         <script src="js/saveDataAcrossPages.js"></script>
         <script src="js/calendar.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
       </head>
       <body id="build4body" onload="createCalendarUnderDiv('build4body')">
         <center>
@@ -73,6 +74,7 @@ class BuildSchedule4Servlet(db: MyDatabase) extends ScheduleguruStack {
           </div>
         </section>
         <br></br>
+        <!-- input id="backButton4" onclick="build4backbutton()" type="button" value="BACK"></input-->
         <input id="nextButton4" onclick="build4button()" type="button" value="NEXT"></input>
       </body>
     </html>

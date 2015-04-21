@@ -47,6 +47,10 @@ function build3button(){
 	window.location.href = "/build4";
 }
 
+function build3backbutton(){
+	window.location.href = "/build2";
+}
+
 function getMajor(){
 	alert("in here");
 	var xmlhttp;
@@ -71,8 +75,13 @@ function build4button(){
 	localStorage.setItem("majorClassesSelected",JSON.stringify(calendarCourseArray));
 	window.location.href = "/build5";
 }
-function build5button(){
-	
+
+function build4backbutton(){
+	build2button();
+}
+
+function build5backbutton(){
+	build3button();
 }
 function testCheckBoxes(checkBox){
 	//checkBox ID is in the form tableID:[tID]:row:[row_num]

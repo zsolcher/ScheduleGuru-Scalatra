@@ -30,18 +30,9 @@ class BuildSchedule5Servlet(db: MyDatabase) extends ScheduleguruStack {
           </ul>
         </nav>
         <section>
-          <b><u>Finalize Schedule</u></b>
-          <ul id="cc">
-            Javascript for calendar goes here
-          </ul>
+          <b><u>Final Schedule</u></b>
         </section>
-        <section>
-          <div class="page" id="finalize">
-          </div>
-          <input type="submit" value="Finalize"></input>
-        </section>
-        <br></br>
-        <input id="nextButton5" onclick="build5button()" type="button" value="NEXT"></input>
+        <input id="backButton5" onclick="build5backbutton()" type="button" value="BACK"></input>
       </body>
     </html>
   }

@@ -74,12 +74,12 @@ get("/") {
               <br></br>
               <label for="radioGroupStart">What time do you want the earliest class to start? </label>
               <br></br>
-              <input type="radio" name="radioStart" value="No Preference" onchange="preferedStartOnChange(this);" checked="true">No Preference</input>
-              <input type="radio" name="radioStart" value="08:30:00" onchange="preferedStartOnChange(this);">8:30</input>
-              <input type="radio" name="radioStart" value="09:30:00" onchange="preferedStartOnChange(this);">9:30</input>
-              <input type="radio" name="radioStart" value="10:30:00" onchange="preferedStartOnChange(this);">10:30</input>
-              <input type="radio" name="radioStart" value="11:30:00" onchange="preferedStartOnChange(this);">11:30</input>
-              <input type="radio" name="radioStart" value="12:30:00" onchange="preferedStartOnChange(this);">12:30</input>
+              <input type="radio" name="radioStart" value="No Preference" checked="true">No Preference</input>
+              <input type="radio" name="radioStart" value="08:30:00">8:30</input>
+              <input type="radio" name="radioStart" value="09:30:00">9:30</input>
+              <input type="radio" name="radioStart" value="10:30:00">10:30</input>
+              <input type="radio" name="radioStart" value="11:30:00">11:30</input>
+              <input type="radio" name="radioStart" value="12:30:00">12:30</input>
               <br></br>
               <br></br>
               <label for="radioGroupStart">What time do you want the latest class to end? </label>
