@@ -5,7 +5,15 @@ var userLast = "";
 var userMajor = "";
 var userYear = "";
 
+localStorage.setItem("userEmail","none");
+localStorage.setItem("userID","");
+localStorage.setItem("userFirst","");
+localStorage.setItem("userLast","");
+localStorage.setItem("userMajor","");
+localStorage.setItem("userYear","");
+
 getCurrentUser();
+
 localStorage.setItem("userEmail",userEmail);
 localStorage.setItem("userID",userID);
 localStorage.setItem("userFirst",userFirst);
@@ -32,7 +40,6 @@ function getCurrentUser(){
 			userYear = split[3];
 			userFirst = split[4];
 			userLast = split[5];
-			alert("Got here");
 		}
 	}
 	xmlhttp.open("POST",window.location.origin+"/login/currentUser",false);
