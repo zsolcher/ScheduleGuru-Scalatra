@@ -42,16 +42,6 @@ class BuildSchedule4Servlet(db: MyDatabase) extends ScheduleguruStack {
         <center>
           <h1> Build Schedule 3 (CC classes)</h1>
         </center>
-        <!--menu bar-->
-        <nav>
-          <ul>
-            <li><a href="welcome">Home</a></li>
-            <li><a href="build2">Build Schedule</a></li>
-            <li><a href="updateUser">Account</a></li>
-            <li><a href="aboutus">About Us</a></li>
-            <li><a href="contact">Contact</a></li>
-          </ul>
-        </nav>
         <section>
           <p>
             These are the Common Curriculum classes that fit within your time preferences and do not conflict with a class you are taking for your major. Please select all you would like to take. There is an additional step where you may select non-Common Curriculum classes if you so wish.

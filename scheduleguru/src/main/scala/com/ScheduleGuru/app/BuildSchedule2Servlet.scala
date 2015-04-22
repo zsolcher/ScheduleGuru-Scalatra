@@ -23,16 +23,6 @@ get("/") {
         <center>
           <h1> Build Schedule 1</h1>
         </center>
-        <!--menu bar-->
-        <nav>
-          <ul>
-            <li><a href="welcome">Home</a></li>
-            <li><a href="build2">Build Schedule</a></li>
-            <li><a href="updateUser">Account</a></li>
-            <li><a href="aboutus">About Us</a></li>
-            <li><a href="contact">Contact</a></li>
-          </ul>
-        </nav>
         <section>
           <div class="page" id="pagePreferences">
             <div class="preferenceArea">

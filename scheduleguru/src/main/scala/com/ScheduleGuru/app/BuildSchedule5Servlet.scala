@@ -19,20 +19,11 @@ class BuildSchedule5Servlet(db: MyDatabase) extends ScheduleguruStack {
         <center>
           <h1> Build Schedule 4 (Finalize)</h1>
         </center>
-        <!--menu bar-->
-        <nav>
-          <ul>
-            <li><a href="welcome">Home</a></li>
-            <li><a href="build2">Build Schedule</a></li>
-            <li><a href="updateUser">Account</a></li>
-            <li><a href="aboutus">About Us</a></li>
-            <li><a href="contact">Contact</a></li>
-          </ul>
-        </nav>
         <section>
           <b><u>Final Schedule</u></b>
         </section>
         <input id="backButton5" onclick="build5backbutton()" type="button" value="BACK"></input>
+				<input id="finalizebutton" onclick="window.location.href = '/welcome'" type="button" value="FINISH"></input> 
       </body>
     </html>
   }
