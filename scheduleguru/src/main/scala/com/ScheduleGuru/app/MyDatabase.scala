@@ -215,6 +215,18 @@ class MyDatabase(connect: Connection) {
       case e: Exception => e.printStackTrace()
     }
   }
+  
+  def updateUser(userID: String, pw:String) {
+    try {
+      val preparedStatement = connect.prepareStatement("UPDATE Users SET Password = ? WHERE UserID = ?");
+      preparedStatement.setString(1, pw);
+      preparedStatement.setString(2, userID);
+      preparedStatement.executeUpdate()
+
+    } catch {
+      case e: Exception => e.printStackTrace()
+    }
+  }
 
   def inputSameClass(id: Int, classIDOfSame: Int) = {
     try {
