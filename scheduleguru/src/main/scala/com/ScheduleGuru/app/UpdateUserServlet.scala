@@ -53,6 +53,18 @@ class UpdateUserServlet(db: MyDatabase) extends ScheduleguruStack {
           <form name="updatePw" action="/UpdateUser/updating" method="post">
             <h2>Change Password</h2>
             <br/>
+						<label>Change Email: </label>
+            <input id="password1" name="password1" placeholder="******" type="password"></input>
+            <br/>
+            <br/>
+						<label>Change First Name: </label>
+            <input id="password1" name="password1" placeholder="******" type="password"></input>
+            <br/>
+            <br/>
+						<label>Change Last Name: </label>
+            <input id="password1" name="password1" placeholder="******" type="password"></input>
+            <br/>
+            <br/>
             <label>New Password: </label>
             <input id="password1" name="password1" placeholder="******" type="password"></input>
             <br/>
