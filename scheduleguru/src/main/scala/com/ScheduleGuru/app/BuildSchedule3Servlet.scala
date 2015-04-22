@@ -27,16 +27,6 @@ class BuildSchedule3Servlet(db: MyDatabase) extends ScheduleguruStack {
         <center>
           <h1> Build Schedule 2 (Classes in the Major)</h1>
         </center>
-        <!--menu bar-->
-        <nav>
-          <ul>
-            <li><a href="welcome">Home</a></li>
-            <li><a href="build2">Build Schedule</a></li>
-            <li><a href="updateUser">Account</a></li>
-            <li><a href="aboutus">About Us</a></li>
-            <li><a href="contact">Contact</a></li>
-          </ul>
-        </nav>
         <section>
           <div id="majorClassOptions">
             <div id="tbleDiv" style="width:750px; float:left;">

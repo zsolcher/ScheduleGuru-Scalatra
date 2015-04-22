@@ -93,7 +93,7 @@ class MyLoginServlet(db: MyDatabase) extends ScheduleguruStack {
           <form name="login" action="/login/checking" method="POST">
             <h2>Registered User</h2>
             <br/>
-            <label>Username: </label>
+            <label>E-mail: </label>
             <input id="name" name="username" placeholder="email address" type="text"></input>
             <br/>
             <br/>
