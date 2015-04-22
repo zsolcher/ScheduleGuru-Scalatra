@@ -1,6 +1,19 @@
-var currentUser = "none";
+var userEmail = "none";
+var userID = "";
+var userFirst = "";
+var userLast = "";
+var userMajor = "";
+var userYear = "";
+
 getCurrentUser();
-if(currentUser != "none"){
+localStorage.setItem("userEmail",userEmail);
+localStorage.setItem("userID",userID);
+localStorage.setItem("userFirst",userFirst);
+localStorage.setItem("userLast",userLast);
+localStorage.setItem("userMajor",userMajor);
+localStorage.setItem("userYear",userYear);
+
+if(userEmail != "none"){
 	window.location.href = "/welcome";
 }
 else{
@@ -11,7 +24,15 @@ function getCurrentUser(){
 	var xmlhttp = new XMLHttpRequest();
 	xmlhttp.onreadystatechange=function(){
 		if (xmlhttp.readyState==4 && xmlhttp.status==200){
-			currentUser = xmlhttp.responseText;
+			var toSplit = xmlhttp.responseText;
+			var split = toSplit.split(",");
+			userEmail = split[0];
+			userID = split[1];
+			userMajor = split[2];
+			userYear = split[3];
+			userFirst = split[4];
+			userLast = split[5];
+			alert("Got here");
 		}
 	}
 	xmlhttp.open("POST",window.location.origin+"/login/currentUser",false);

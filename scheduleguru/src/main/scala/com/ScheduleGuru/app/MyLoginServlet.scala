@@ -4,17 +4,28 @@ import org.scalatra._
 
 class MyLoginServlet(db: MyDatabase) extends ScheduleguruStack {
 
-  var currentUser = "none"
+  var userEmail = "none"
+  var userID = ""
+  var userFirst = ""
+  var userLast = ""
+  var userMajor = ""
+  var userYear = ""
 
   post("/checking") {
     val givenUsername = params.get("username")
     val givenPassword = params.get("password")
     println("trying to check the login for " + givenUsername.get + " and " + givenPassword.get)
     val userInfo = db.getUserInfoForEmail(givenUsername.get)
+    userID = userInfo(0)
+    userEmail = userInfo(1)
+    userMajor = userInfo(3)
+    userYear = userInfo(4)
+    userFirst = userInfo(5)
+    userLast = userInfo(6)
     if (givenPassword.get == userInfo(2)) {
-      currentUser = givenUsername.get;
+      userEmail = givenUsername.get;
     } else {
-      currentUser = "none";
+      userEmail = "none";
     }
     <html>
       <head>
@@ -44,10 +55,10 @@ class MyLoginServlet(db: MyDatabase) extends ScheduleguruStack {
     println("pw2 = " + pw2)
 
     if(pw1 != pw2) {
-      currentUser = "none";
+      userEmail = "none";
     } else {
       db.createUser(fname, lname, email, pw1)
-      currentUser = email;
+      userEmail = email;
     }
     
     <html>
@@ -64,7 +75,7 @@ class MyLoginServlet(db: MyDatabase) extends ScheduleguruStack {
   
   post("/currentUser") {
     println("Got to current user") 
-    currentUser
+    userEmail+","+userID+","+userMajor+","+userYear+","+userFirst+","+userLast
   }
 
   get("/") {
