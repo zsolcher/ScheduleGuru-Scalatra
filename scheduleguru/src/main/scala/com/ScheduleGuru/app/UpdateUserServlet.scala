@@ -46,12 +46,12 @@ class UpdateUserServlet(db: MyDatabase) extends ScheduleguruStack {
         <link rel="stylesheet" type="text/css" href="./css/master.css"></link>
         <script src="/js/loadAccountSettings.js"></script>
       </head>
-      <body>
+      <body onload="loadAccountSettings()">
         <center>
           <h1> Update Account Settings</h1>
         </center>
         <section id="changePw" class="loginForm cf">
-          <form name="updatePw" action="/UpdateUser/updating" method="post" onload="loadAccountSettings()">
+          <form name="updatePw" action="/UpdateUser/updating" method="post">
             <h2>Change Email</h2>
             <br/>
 	    <label>New Email: </label>
