@@ -5,6 +5,9 @@ import org.scalatra._
 class UpdateUserServlet(db: MyDatabase) extends ScheduleguruStack {
 
   post("/updating") {
+    val email = params.get("newEmail").get
+    val first = params.get("newFirst").get
+    val last = params.get("newlast").get
     val pw1 = params.get("password1").get
     val pw2 = params.get("password2").get
 

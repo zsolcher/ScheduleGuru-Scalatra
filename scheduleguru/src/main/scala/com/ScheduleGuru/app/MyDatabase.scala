@@ -199,16 +199,14 @@ class MyDatabase(connect: Connection) {
     classArr
   }
 
-  def updateUser(userID: String, email: String, password: String, major: String, year: String, firstName: String, lastName: String) {
+  def updateUser(userID: String, email: String, password: String, firstName: String, lastName: String) {
     try {
-      val preparedStatement = connect.prepareStatement("UPDATE Users SET Password = ?, Major = ?, Year = ?, FirstName = ?, LastName = ?, Email = ? WHERE UserID = ?");
+      val preparedStatement = connect.prepareStatement("UPDATE Users SET Password = ?, FirstName = ?, LastName = ?, Email = ? WHERE UserID = ?");
       preparedStatement.setString(1, password);
-      preparedStatement.setString(2, major);
-      preparedStatement.setString(3, year);
-      preparedStatement.setString(4, firstName);
-      preparedStatement.setString(5, lastName);
-      preparedStatement.setString(6, email);
-      preparedStatement.setString(7, userID);
+      preparedStatement.setString(2, firstName);
+      preparedStatement.setString(3, lastName);
+      preparedStatement.setString(4, email);
+      preparedStatement.setString(5, userID);
       preparedStatement.executeUpdate()
 
     } catch {
@@ -216,7 +214,43 @@ class MyDatabase(connect: Connection) {
     }
   }
   
-  def updateUser(userID: String, pw:String) {
+  def updateUserEmail(userID: String, email:String) {
+    try {
+      val preparedStatement = connect.prepareStatement("UPDATE Users SET Email = ? WHERE UserID = ?");
+      preparedStatement.setString(1, email);
+      preparedStatement.setString(2, userID);
+      preparedStatement.executeUpdate()
+
+    } catch {
+      case e: Exception => e.printStackTrace()
+    }
+  }
+
+  def updateUserFirst(userID: String, first:String) {
+    try {
+      val preparedStatement = connect.prepareStatement("UPDATE Users SET FirstName = ? WHERE UserID = ?");
+      preparedStatement.setString(1, first);
+      preparedStatement.setString(2, userID);
+      preparedStatement.executeUpdate()
+
+    } catch {
+      case e: Exception => e.printStackTrace()
+    }
+  }
+
+  def updateUserLast(userID: String, last:String) {
+    try {
+      val preparedStatement = connect.prepareStatement("UPDATE Users SET LastName = ? WHERE UserID = ?");
+      preparedStatement.setString(1, last);
+      preparedStatement.setString(2, userID);
+      preparedStatement.executeUpdate()
+
+    } catch {
+      case e: Exception => e.printStackTrace()
+    }
+  }
+
+  def updateUserPw(userID: String, pw:String) {
     try {
       val preparedStatement = connect.prepareStatement("UPDATE Users SET Password = ? WHERE UserID = ?");
       preparedStatement.setString(1, pw);
