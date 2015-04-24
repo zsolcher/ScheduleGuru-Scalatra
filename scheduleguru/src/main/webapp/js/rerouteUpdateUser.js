@@ -3,15 +3,23 @@
  */
 
 var currentUser = "none";
-getCurrentUser();
 
 function reroute(isMatch) {
 	if(isMatch == true) {
-		
+		alert("Successfully updated User Information");
+		window.location.href = "/updateUser";
 	} else {
 		alert("Passwords do not match, please re-enter them.");
-		window.location.href = "/UpdateUser";
+		window.location.href = "/updateUser";
 	}
+}
+
+function updateLocalStorage(updateTo){
+    var split = updateTo.split(",");
+	localStorage.setItem("userID",split[0]);
+	localStorage.setItem("userEmail",split[1]);
+	localStorage.setItem("userFirst",split[2]);
+	localStorage.setItem("userLast",split[3]);
 }
 
 function getCurrentUser(){

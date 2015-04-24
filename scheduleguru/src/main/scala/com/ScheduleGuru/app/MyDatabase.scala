@@ -199,7 +199,7 @@ class MyDatabase(connect: Connection) {
     classArr
   }
 
-  def updateUser(userID: String, email: String, password: String, firstName: String, lastName: String) {
+  def updateUserWithPassword(userID: String, email: String, password: String, firstName: String, lastName: String) {
     try {
       val preparedStatement = connect.prepareStatement("UPDATE Users SET Password = ?, FirstName = ?, LastName = ?, Email = ? WHERE UserID = ?");
       preparedStatement.setString(1, password);
@@ -214,6 +214,20 @@ class MyDatabase(connect: Connection) {
     }
   }
   
+  def updateUserWithoutPassword(userID: String, email: String, firstName: String, lastName: String) {
+    try {
+      val preparedStatement = connect.prepareStatement("UPDATE Users SET FirstName = ?, LastName = ?, Email = ? WHERE UserID = ?");
+      preparedStatement.setString(1, firstName);
+      preparedStatement.setString(2, lastName);
+      preparedStatement.setString(3, email);
+      preparedStatement.setString(4, userID);
+      preparedStatement.executeUpdate()
+
+    } catch {
+      case e: Exception => e.printStackTrace()
+    }
+  }
+
   def updateUserEmail(userID: String, email:String) {
     try {
       val preparedStatement = connect.prepareStatement("UPDATE Users SET Email = ? WHERE UserID = ?");

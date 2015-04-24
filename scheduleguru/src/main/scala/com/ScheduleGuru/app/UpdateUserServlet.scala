@@ -7,9 +7,10 @@ class UpdateUserServlet(db: MyDatabase) extends ScheduleguruStack {
   post("/updating") {
     val email = params.get("newEmail").get
     val first = params.get("newFirst").get
-    val last = params.get("newlast").get
-    val pw1 = params.get("password1").get
-    val pw2 = params.get("password2").get
+    val last = params.get("newLast").get
+    val pw1 = params.get("newPw1").get
+    val pw2 = params.get("newPw2").get
+    val userID = params.get("userID").get
 
     if (pw1 != pw2) {
       //alert to redo input
@@ -23,16 +24,15 @@ class UpdateUserServlet(db: MyDatabase) extends ScheduleguruStack {
         </body>
       </html>
     } else {
-
-      //val uid = db.getUserInfoForUserID()
-      //db.updateUser(uid, pw1)
-
+      if(pw1 == "") db.updateUserWithoutPassword(userID,email,first,last)
+      else db.updateUserWithPassword(userID,email,pw1,first,last)
+      val toSplit = userID+","+email+","+first+","+last
       <html>
         <head>
           <script src="/js/rerouteUpdateUser.js"></script>
         </head>
         <body>
-          <script> reroute(true) </script>
+          <script> updateLocalStorage('{toSplit}');reroute(true) </script>
         </body>
       </html>
     }
@@ -51,14 +51,29 @@ class UpdateUserServlet(db: MyDatabase) extends ScheduleguruStack {
       </head>
       <body onload="loadAccountSettings()">
         <center>
+          <h1> ScheduleGuru </h1>
+        </center>
+        <!--menu bar-->
+        <nav>
+          <ul>
+            <li><a href="welcome">Home</a></li>
+            <li><a href="build2">Build Schedule</a></li>
+            <li><a href="updateUser">Account</a></li>
+            <li><a href="aboutus">About Us</a></li>
+            <li><a href="contact">Contact</a></li>
+          </ul>
+        </nav>
+
+        <center>
           <h1> Update Account Settings</h1>
         </center>
         <section id="changePw" class="loginForm cf">
-          <form name="updatePw" action="/UpdateUser/updating" method="post">
+          <form name="updatePw" action="/updateUser/updating" method="post">
             <h2>Change Email</h2>
             <br/>
 	    <label>New Email: </label>
             <input id="newEmail" name="newEmail"></input>
+            <input type="hidden" id="userID" name="userID"></input>
             <br/>
             <br/>
             <h2>Change Personal Info</h2>
@@ -72,14 +87,14 @@ class UpdateUserServlet(db: MyDatabase) extends ScheduleguruStack {
             <br/>
 	    <h2>Change Password</h2>
             <label>New Password: </label>
-            <input id="newPw1" name="password1" type="password"></input>
+            <input id="newPw1" name="newPw1" type="password"></input>
             <br/>
             <br/>
             <label>Re-Enter New Password: </label>
-            <input id="newPw2" name="password2" type="password"></input>
+            <input id="newPw2" name="newPw2" type="password"></input>
             <br/>
             <br/>
-            <button type="submit">Create Account</button>
+            <button type="submit">Update Account</button>
             <br/>
           </form>
         </section>
